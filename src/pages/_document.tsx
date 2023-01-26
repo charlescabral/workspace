@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import { getCssText, reset } from '@/styles'
+import Analytics from '@/components/Analytics'
 
 const getCssAndReset = () => {
   const css = getCssText()
@@ -19,6 +20,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <Analytics />
       </body>
     </Html>
   )
