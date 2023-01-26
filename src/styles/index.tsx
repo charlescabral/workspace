@@ -9,18 +9,18 @@ export const {
   theme,
   reset,
   createTheme,
-  config,
+  config
 } = createStitches({
   theme: {
     colors: {
       gray400: 'gainsboro',
-      gray500: 'lightgray',
-    },
+      gray500: 'lightgray'
+    }
   },
   media: {
-    bp1: '(min-width: 480px)',
+    bp1: '(min-width: 480px)'
   },
   utils: {
-    marginX: (value: number) => ({ marginLeft: value, marginRight: value }),
+    marginX: (value: number) => ({ marginLeft: value, marginRight: value })
   }
 })

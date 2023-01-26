@@ -9,9 +9,12 @@ const getCssAndReset = () => {
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="pt-BR">
       <Head>
-        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssAndReset() }} />
+        <style
+          id="stitches"
+          dangerouslySetInnerHTML={{ __html: getCssAndReset() }}
+        />
       </Head>
       <body>
         <Main />
