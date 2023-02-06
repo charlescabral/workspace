@@ -1,19 +1,21 @@
 {
   "name": "Charles Cabral",
-  "short_name": "Charles Cabral",
+  "short_name": "Charles Dev",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/img/icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
-      "src": "/favicon.ico",
+      "src": "/img/icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "background_color": "#06092B",
+  "background_color": "#f4f4f4",
   "description": "A simple to show my job",
   "display": "fullscreen",
   "start_url": "/",
