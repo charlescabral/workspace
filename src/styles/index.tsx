@@ -1,4 +1,5 @@
 import { createStitches } from '@stitches/react'
+// import { tokens } from './tokens'
 
 export const {
   styled,
@@ -6,21 +7,20 @@ export const {
   globalCss,
   keyframes,
   getCssText,
-  theme,
-  reset,
   createTheme,
+  reset,
+  theme,
   config
 } = createStitches({
   theme: {
     colors: {
-      gray400: 'gainsboro',
-      gray500: 'lightgray'
+      primary: 'hsl(206,10%,5%)'
     }
-  },
-  media: {
-    bp1: '(min-width: 480px)'
-  },
-  utils: {
-    marginX: (value: number) => ({ marginLeft: value, marginRight: value })
   }
 })
+
+// const darkTheme = createTheme({
+//   colors: {
+//     primary: 'white'
+//   }
+// })
