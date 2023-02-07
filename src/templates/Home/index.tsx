@@ -18,7 +18,7 @@ export default function HomeTemplate() {
     <>
       <main className={viewport()}>
         <BrandIcon fill="gray" size={100} />
-        <Hello />
+        <Hello name="Stranger" />
       </main>
     </>
   )

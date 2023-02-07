@@ -1,13 +1,10 @@
-import { css } from '@/styles'
 import { {{pascalCase name}}Props } from './types'
-
-const selector = css('div', {
-  color: 'gainsbro'
-})
+import { article } from './styles'
 
 const {{pascalCase name}} = ({ name }: {{pascalCase name}}Props) => (
-  <article className={selector()}>
-    <h2>{{pascalCase name}} {name}</h2>
+  <article className={article()}>
+    <h2>{{pascalCase name}} Instance</h2>
+    <p>{name}</p>
   </article>
 )
 

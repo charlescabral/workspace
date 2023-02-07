@@ -1,23 +1,11 @@
-import { css } from '@/styles'
 import { HelloProps } from './types'
 import Image from 'next/image'
-
-const thumb = css('div', {
-  display: 'block',
-  backgroundColor: 'green',
-  color: 'white',
-  padding: '1rem'
-})
+import { main } from './styles'
 
 const Hello = ({ name }: HelloProps) => (
-  <main className={thumb()}>
-    <h1>Ola {name}</h1>
-    <Image
-      src="/img/icon-512.png"
-      alt="Picture of the author"
-      width={100}
-      height={100}
-    />
+  <main className={main()}>
+    <h1>Hello, {name}</h1>
+    <Image src="/img/hello.png" alt="👋" width={42} height={42} />
   </main>
 )
 
