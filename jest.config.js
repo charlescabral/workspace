@@ -3,17 +3,17 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
-  modulePaths: ['<rootDir>/src/'],
   moduleDirectories: ['node_modules', '<rootDir>/'],
   collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
+    'src/**/*.ts(x)?',
+    '!src/**/stories.tsx',
     '!<rootDir>/*.{js,jsx,ts,tsx}',
     '!**/node_modules/**',
     '!**/.next/**',
     '!**/coverage/**',
     '!**/.storybook/**',
     '!**/storybook-static/**',
-    '!**/*.stories.*',
+    '!**/*stories.*',
     '!<rootDir>/public/mockServiceWorker.js'
   ],
   moduleNameMapper: {
