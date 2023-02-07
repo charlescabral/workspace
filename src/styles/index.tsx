@@ -1,6 +1,5 @@
 import { createStitches } from '@stitches/react'
-// import { tokens } from './tokens'
-
+// import { globals } from './globals'
 export const {
   styled,
   css,
@@ -19,8 +18,17 @@ export const {
   }
 })
 
+const injectGlobalStyles = globalCss({
+  '*': { boxSizing: 'border-box' },
+  body: { margin: 0, padding: 0, backgroundColor: '#F4F4F4' }
+})
+
+injectGlobalStyles()
+
 // const darkTheme = createTheme({
 //   colors: {
 //     primary: 'white'
 //   }
 // })
+
+// export const globalStyles = globals()

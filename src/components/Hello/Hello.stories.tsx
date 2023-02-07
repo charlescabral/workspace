@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 import Hello from '.'
-import { HelloProps } from './typings'
+import { HelloProps } from './types'
 
 export default {
   title: 'Hello Component',
