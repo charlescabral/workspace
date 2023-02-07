@@ -1,5 +1,5 @@
 import { css } from '@/styles'
-import { HelloProps } from './typings'
+import { HelloProps } from './types'
 
 const thumb = css('div', {
   display: 'block',

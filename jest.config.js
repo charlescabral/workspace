@@ -6,7 +6,7 @@ module.exports = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
-    '!src/**/stories.tsx',
+    '!src/**/.stories.tsx',
     '!<rootDir>/*.{js,jsx,ts,tsx}',
     '!**/node_modules/**',
     '!**/.next/**',
