@@ -1,5 +1,7 @@
-import { BrandIcon } from '@/components/SvgIcons/'
 import { css } from '@/styles'
+
+import { BrandIcon } from '@/components/SvgIcons/'
+import Hello from '@/components/Hello'
 
 const viewport = css({
   display: 'flex',
@@ -16,6 +18,7 @@ export default function HomeTemplate() {
     <>
       <main className={viewport()}>
         <BrandIcon fill="gray" size={100} />
+        <Hello />
       </main>
     </>
   )

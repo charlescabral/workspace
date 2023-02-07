@@ -18,12 +18,10 @@ export const {
   }
 })
 
-const injectGlobalStyles = globalCss({
-  '*': { boxSizing: 'border-box' },
-  body: { margin: 0, padding: 0, backgroundColor: '#F4F4F4' }
-})
-
-injectGlobalStyles()
+// const injectGlobalStyles = globalCss({
+//   '*': { boxSizing: 'border-box' },
+//   body: { margin: 0, padding: 0, backgroundColor: '#F4F4F4' }
+// })
 
 // const darkTheme = createTheme({
 //   colors: {
