@@ -1,6 +1,6 @@
-import { HelloProps } from './types'
+import { HelloProps } from './type'
 import Image from 'next/image'
-import { main } from './styles'
+import { main } from './style'
 
 const Hello = ({ name }: HelloProps) => (
   <main className={main()}>

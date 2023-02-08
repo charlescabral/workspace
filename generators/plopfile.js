@@ -16,23 +16,23 @@ module.exports = (plop) => {
       },
       {
         type: 'add',
-        path: '../src/components/{{pascalCase name}}/index.stories.tsx',
-        templateFile: 'templates/stories.tsx.hbs'
+        path: '../src/components/{{pascalCase name}}/index.story.tsx',
+        templateFile: 'templates/story.tsx.hbs'
       },
       {
         type: 'add',
-        path: '../src/components/{{pascalCase name}}/tests.tsx',
-        templateFile: 'templates/tests.tsx.hbs'
+        path: '../src/components/{{pascalCase name}}/test.tsx',
+        templateFile: 'templates/test.tsx.hbs'
       },
       {
         type: 'add',
-        path: '../src/components/{{pascalCase name}}/styles.ts',
-        templateFile: 'templates/styles.ts.hbs'
+        path: '../src/components/{{pascalCase name}}/style.ts',
+        templateFile: 'templates/style.ts.hbs'
       },
       {
         type: 'add',
-        path: '../src/components/{{pascalCase name}}/types.d.ts',
-        templateFile: 'templates/types.d.ts.hbs'
+        path: '../src/components/{{pascalCase name}}/type.d.ts',
+        templateFile: 'templates/type.d.ts.hbs'
       }
     ]
   })

@@ -1,10 +1,10 @@
-import { {{pascalCase name}}Props } from './types'
-import { article } from './styles'
+import { {{pascalCase name}}Props } from './type'
+import { article } from './style'
 
-const {{pascalCase name}} = ({ name }: {{pascalCase name}}Props) => (
+const {{pascalCase name}} = ({ text }: {{pascalCase name}}Props) => (
   <article className={article()}>
     <h2>{{pascalCase name}} Instance</h2>
-    <p>{name}</p>
+    <p>{text}</p>
   </article>
 )
 
