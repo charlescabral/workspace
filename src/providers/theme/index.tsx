@@ -4,7 +4,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, {
-  Fragment,
   createContext,
   useCallback,
   useContext,
@@ -27,7 +26,7 @@ export const useTheme = () => useContext(ThemeContext) ?? defaultContext
 export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const context = useContext(ThemeContext)
 
-  if (context) return <Fragment>{props.children}</Fragment>
+  if (context) return <>{props.children}</>
   return <Theme {...props} />
 }
 
