@@ -6,7 +6,8 @@ import {
   useState
 } from 'react'
 
-import parseJSON from './../parseJSON'
+import { parseJSON } from '@/helpers'
+
 import { useEventCallback, useEventListener } from '.'
 
 declare global {

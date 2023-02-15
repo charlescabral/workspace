@@ -1,7 +1,9 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { DefaultSeo } from 'next-seo'
 import { theme, darkTheme } from '@/styles'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from '@/providers/theme'
+import SEO from '~/next-seo.config'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -21,6 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="theme-color" content="#06092b" />
         <meta name="description" content="A simple to show my job" />
       </Head>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </ThemeProvider>
   )

@@ -1,12 +1,12 @@
 import { HelloProps } from './type'
 import Image from 'next/image'
-import { main } from './style'
+import { Div } from './style'
 
 const Hello = ({ name }: HelloProps) => (
-  <main className={main()}>
+  <Div>
     <h1>Hello, {name}</h1>
     <Image src="/img/hello.png" alt="👋" width={42} height={42} />
-  </main>
+  </Div>
 )
 
 export default Hello

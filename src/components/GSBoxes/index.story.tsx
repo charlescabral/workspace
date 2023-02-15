@@ -1,13 +1,13 @@
 import { Meta } from '@storybook/react'
-import Spotlight from '.'
+import GSBoxes from '.'
 
 export default {
-  title: 'Spotlight',
-  component: Spotlight
+  title: 'GSBoxes',
+  component: GSBoxes
 } as Meta<unknown>
 
 export const Basic = {
   args: {
-    text: 'Spotlight'
+    text: 'GSBoxes'
   }
 }

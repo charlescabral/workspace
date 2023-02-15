@@ -1,28 +1,19 @@
-import { BrandIcon } from '@/components/SvgIcons/'
-import { css } from '@/styles'
 import dynamic from 'next/dynamic'
+import Hello from '@/components/Hello'
+import { BrandIcon } from '@/components/SvgIcons/'
 import { HomeProps } from './type'
+import { Main } from './style'
 
 const SwitchTheme = dynamic(() => import('@/components/SwitchTheme'), {
   ssr: false
 })
 
-const viewport = css({
-  display: 'flex',
-  flexDirection: 'column',
-  flexWrap: 'nowrap',
-  alignContent: 'center',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '100vh'
-})
-
 export default function HomeTemplate({ name }: HomeProps) {
   return (
-    <main className={viewport()}>
-      <SwitchTheme />
-      {name}
+    <Main>
       <BrandIcon fill="gray" size={100} />
-    </main>
+      <Hello name={name} />
+      <SwitchTheme />
+    </Main>
   )
 }

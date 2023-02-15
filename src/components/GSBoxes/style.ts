@@ -1,11 +1,12 @@
-import { css } from '@/styles'
+import { styled } from '@/styles'
 
-export const box = css('article', {
+export const Div = styled('div', {
   backgroundColor: 'green',
   color: 'white',
   textAlign: 'center',
   lineHeight: '100px',
   width: 100,
   height: 100,
-  borderRadius: 5
+  borderRadius: 5,
+  margin: '40px'
 })

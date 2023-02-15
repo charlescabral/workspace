@@ -1,10 +1,10 @@
-import { css } from '@/styles'
+import { styled } from '@/styles'
 
-export const main = css('div', {
+export const Div = styled('div', {
   display: 'block',
-  backgroundColor: 'white',
+  border: 'dashed 2px $text',
   padding: '2rem 6rem',
   textAlign: 'center',
   margin: '2rem',
-  borderRadius: 5
+  borderRadius: 14
 })
