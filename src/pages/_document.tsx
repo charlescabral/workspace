@@ -17,12 +17,24 @@ const getCssAndReset = () => {
 
 export default class AppDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
+    const originalRenderPage = ctx.renderPage
     const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) => <App {...props} />
+        })
+
+      return {
+        ...initialProps
+      }
+    } finally {
+      injectGlobalStyles()
+    }
   }
 
   render() {
-    injectGlobalStyles()
     return (
       <Html lang="pt-BR">
         <Head>
