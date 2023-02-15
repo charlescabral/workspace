@@ -15,9 +15,7 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(
-    'https://workspace-4tw18uyva-charlescabral.vercel.app/api/hello'
-  )
+  const res = await fetch('https://charlescabral/api/hello')
   const name = await res.json()
 
   return {
