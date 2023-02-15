@@ -1,10 +1,16 @@
 // import HomeTemplate from '@/templates/Home'
 import HomeTemplate from '@/templates/Home'
+import { useRouter } from 'next/router'
 import { InferGetStaticPropsType } from 'next/types'
 
 export default function Home({
   name
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter()
+
+  // loading
+  if (router.isFallback) return null
+
   return <HomeTemplate {...name} />
 }
 
