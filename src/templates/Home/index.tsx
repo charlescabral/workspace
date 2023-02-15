@@ -1,6 +1,11 @@
-import { useEffect } from 'react'
-import { useLocalStorage, useSessionStorage } from '@/helpers/hooks'
+import { BrandIcon } from '@/components/SvgIcons/'
 import { css } from '@/styles'
+import dynamic from 'next/dynamic'
+import { HomeProps } from './type'
+
+const SwitchTheme = dynamic(() => import('@/components/SwitchTheme'), {
+  ssr: false
+})
 
 const viewport = css({
   display: 'flex',
@@ -12,32 +17,12 @@ const viewport = css({
   height: '100vh'
 })
 
-export default function HomeTemplate() {
-  const [isDarkTheme, setDarkTheme] = useLocalStorage('darkMode', true)
-  const [value, setValue] = useSessionStorage('test-key', 0)
-
-  const toggleTheme = () => {
-    setDarkTheme((prevValue: boolean) => !prevValue)
-  }
-
-  useEffect(() => setDarkTheme(true))
-
+export default function HomeTemplate({ name }: HomeProps) {
   return (
-    <>
-      <main className={viewport()}>
-        <button onClick={toggleTheme}>
-          {`The current theme is ${isDarkTheme ? `dark` : `light`}`}
-        </button>
-        <div>
-          <p>Count: {value}</p>
-          <button onClick={() => setValue((x: number) => x + 1)}>
-            Increment
-          </button>
-          <button onClick={() => setValue((x: number) => x - 1)}>
-            Decrement
-          </button>
-        </div>
-      </main>
-    </>
+    <main className={viewport()}>
+      <SwitchTheme />
+      {name}
+      <BrandIcon fill="gray" size={100} />
+    </main>
   )
 }

@@ -13,5 +13,9 @@ export const button = css('button', {
 
   '&:hover': {
     transform: 'translate(0, .25em)'
+  },
+
+  '&:active': {
+    transform: 'translate(0, .75em)'
   }
 })

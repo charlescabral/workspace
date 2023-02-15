@@ -13,8 +13,16 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      primary: 'hsl(206,10%,5%)'
+      text: 'gray',
+      background: '#f4f4f4'
     }
+  }
+})
+
+export const darkTheme = createTheme({
+  colors: {
+    text: '#f4f4f4',
+    background: '#3f3f3f'
   }
 })
 

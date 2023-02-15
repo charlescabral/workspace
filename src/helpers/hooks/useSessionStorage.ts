@@ -6,6 +6,8 @@ import {
   useState
 } from 'react'
 
+import parseJSON from './../parseJSON'
+
 import { useEventCallback, useEventListener } from '.'
 
 declare global {
@@ -91,13 +93,3 @@ function useSessionStorage<T>(key: string, initialValue: T): [T, SetValue<T>] {
 }
 
 export default useSessionStorage
-
-// A wrapper for "JSON.parse()"" to support "undefined" value
-function parseJSON<T>(value: string | null): T | undefined {
-  try {
-    return value === 'undefined' ? undefined : JSON.parse(value ?? '')
-  } catch {
-    console.log('parsing error on', { value })
-    return undefined
-  }
-}
