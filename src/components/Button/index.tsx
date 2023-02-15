@@ -1,10 +1,10 @@
 import { ButtonProps } from './type'
-import { button } from './style'
+import { Button } from './style'
 
-const Button = ({ text }: ButtonProps) => (
-  <button className={button()}>
+const ButtonOut = ({ text }: ButtonProps) => (
+  <Button>
     <p>{text}</p>
-  </button>
+  </Button>
 )
 
-export default Button
+export default ButtonOut
