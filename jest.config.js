@@ -7,6 +7,11 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
     '!src/**/.stories.tsx',
+    '!src/helpers/**',
+    '!src/components/SvgIcons/**',
+    '!src/**/*.d.ts',
+    '!src/styles/**',
+    '!src/pages/**',
     '!<rootDir>/*.{js,jsx,ts,tsx}',
     '!**/node_modules/**',
     '!**/.next/**',

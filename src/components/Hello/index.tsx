@@ -1,17 +1,12 @@
-import { css } from '@/styles'
-import { HelloProps } from './types'
-
-const thumb = css('div', {
-  display: 'block',
-  backgroundColor: 'green',
-  color: 'white',
-  padding: '1rem'
-})
+import { HelloProps } from './type'
+import Image from 'next/image'
+import { Div } from './style'
 
 const Hello = ({ name }: HelloProps) => (
-  <main className={thumb()}>
-    <h1>Ola {name}</h1>
-  </main>
+  <Div>
+    <h1>Hello, {name}</h1>
+    <Image src="/img/hello.png" alt="👋" width={42} height={42} />
+  </Div>
 )
 
 export default Hello

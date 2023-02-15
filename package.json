@@ -11,7 +11,8 @@
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate": "yarn plop --plopfile generators/plopfile.js"
   },
   "lint-staged": {
     "src/**/*": [
@@ -52,10 +53,15 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "greensock": "^1.20.2",
+    "gsap": "^3.11.4",
     "husky": "^8.0.3",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "lint-staged": "^13.1.0",
+    "next-seo": "^5.15.0",
+    "nookies": "^2.5.2",
+    "plop": "^3.1.1",
     "prettier": "2.8.3",
     "storybook": "^7.0.0-beta.43"
   }

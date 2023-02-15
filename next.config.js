@@ -8,5 +8,9 @@ module.exports = withPWA({
   images: {
     domains: ['media.graphcms.com', 'media.graphassets.com']
   },
-  reactStrictMode: true
+  reactStrictMode: true,
+  i18n: {
+    locales: ['pt'],
+    defaultLocale: 'pt'
+  }
 })

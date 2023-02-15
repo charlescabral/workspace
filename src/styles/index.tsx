@@ -13,17 +13,23 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      primary: 'hsl(206,10%,5%)'
+      text: 'gray',
+      background: '#f4f4f4'
     }
   }
 })
 
-const injectGlobalStyles = globalCss({
-  '*': { boxSizing: 'border-box' },
-  body: { margin: 0, padding: 0, backgroundColor: '#F4F4F4' }
+export const darkTheme = createTheme({
+  colors: {
+    text: '#f4f4f4',
+    background: '#3f3f3f'
+  }
 })
 
-injectGlobalStyles()
+// const injectGlobalStyles = globalCss({
+//   '*': { boxSizing: 'border-box' },
+//   body: { margin: 0, padding: 0, backgroundColor: '#F4F4F4' }
+// })
 
 // const darkTheme = createTheme({
 //   colors: {

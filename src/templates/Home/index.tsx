@@ -1,22 +1,19 @@
+import dynamic from 'next/dynamic'
+import Hello from '@/components/Hello'
 import { BrandIcon } from '@/components/SvgIcons/'
-import { css } from '@/styles'
+import { HomeProps } from './type'
+import { Main } from './style'
 
-const viewport = css({
-  display: 'flex',
-  flexDirection: 'column',
-  flexWrap: 'nowrap',
-  alignContent: 'center',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '100vh'
+const SwitchTheme = dynamic(() => import('@/components/SwitchTheme'), {
+  ssr: false
 })
 
-export default function HomeTemplate() {
+export default function HomeTemplate({ name }: HomeProps) {
   return (
-    <>
-      <main className={viewport()}>
-        <BrandIcon fill="gray" size={100} />
-      </main>
-    </>
+    <Main>
+      <BrandIcon fill="gray" size={100} />
+      <Hello name={name} />
+      <SwitchTheme />
+    </Main>
   )
 }

@@ -2,6 +2,7 @@ import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
   "stories": [
+    "../src/components/**/*.story.tsx",
     "../src/components/**/*.stories.tsx"
   ],
   "addons": [
@@ -13,6 +14,7 @@ const config: StorybookConfig = {
     "name": "@storybook/nextjs",
     "options": {}
   },
+  "staticDirs": ['../public'],
   "docs": {
     "autodocs": "tag"
   }

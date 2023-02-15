@@ -1,7 +1,22 @@
 import { globalCss } from '.'
 
-export const globals = globalCss({
+export const injectGlobalStyles = globalCss({
+  '*': {
+    boxSizing: 'border-box',
+    '&::after, &::before': {
+      boxSizing: 'border-box'
+    }
+  },
   body: {
-    backgroundColor: '#F4F4F4'
+    display: 'grid',
+    gridGap: '.5rem',
+    placeItems: 'center',
+    margin: 0,
+    padding: 0,
+    color: '$text',
+    backgroundColor: '$background',
+    fontFamily:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    webkitFontSmoothing: 'antialiased'
   }
 })
