@@ -1,5 +1,7 @@
 import { createStitches } from '@stitches/react'
-// import { globals } from './globals'
+import { dark } from './dark'
+import { light } from './light'
+
 export const {
   styled,
   css,
@@ -10,31 +12,6 @@ export const {
   reset,
   theme,
   config
-} = createStitches({
-  theme: {
-    colors: {
-      text: 'gray',
-      background: '#f4f4f4'
-    }
-  }
-})
+} = createStitches({ theme: light })
 
-export const darkTheme = createTheme({
-  colors: {
-    text: '#f4f4f4',
-    background: '#3f3f3f'
-  }
-})
-
-// const injectGlobalStyles = globalCss({
-//   '*': { boxSizing: 'border-box' },
-//   body: { margin: 0, padding: 0, backgroundColor: '#F4F4F4' }
-// })
-
-// const darkTheme = createTheme({
-//   colors: {
-//     primary: 'white'
-//   }
-// })
-
-// export const globalStyles = globals()
+export const darkTheme = createTheme(dark)

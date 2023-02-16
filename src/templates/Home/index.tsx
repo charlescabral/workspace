@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import Hello from '@/components/Hello'
-import { BrandIcon } from '@/components/SvgIcons/'
+import { BrandIcon } from '@/icons'
 import { HomeProps } from './type'
 import { Main } from './style'
 

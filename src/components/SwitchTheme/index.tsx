@@ -1,19 +1,27 @@
-import * as Switch from '@radix-ui/react-switch'
 import { useTheme } from '@/providers/theme'
-import { WrapSwitch } from './style'
+import { Button, Switcher } from './style'
+import { colors } from '@/styles/colors'
+import { playFile } from '@/helpers'
+import Icon from './Icon'
 
 const SwitchTheme = () => {
   const { theme, setTheme } = useTheme()
-  const handleColorChange = () => setTheme(theme === 'light' ? 'dark' : 'light')
+  const { $$purple, $$yellow } = colors
+
+  const isLight = theme === 'light'
+
+  const handleColorChange = () => {
+    setTheme(isLight ? 'dark' : 'light')
+    playFile(isLight ? '/mp3/dark.mp3' : '/mp3/light.mp3')
+  }
 
   return (
-    <WrapSwitch>
-      <Switch.Root className="SwitchRoot" onClick={handleColorChange}>
-        <Switch.Thumb className="SwitchThumb" />
-      </Switch.Root>
-    </WrapSwitch>
+    <Switcher onClick={handleColorChange} checked={isLight}>
+      <Button>
+        <Icon size={22} colorSun={$$yellow} colorMoon={$$purple} />
+      </Button>
+    </Switcher>
   )
-  // <Button onClick={handleColorChange}>Change Theme </Button>
 }
 
 export default SwitchTheme

@@ -11,5 +11,10 @@ export const Button = styled('button', {
 
   '&:active': {
     transform: 'translate(0, .75em)'
+  },
+
+  '&:focus': {
+    outline: 'none',
+    boxShadow: '0 0 0 2px #ccc, 0 0 0 4px #000'
   }
 })

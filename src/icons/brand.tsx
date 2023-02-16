@@ -1,4 +1,4 @@
-import { SvgProps } from './types'
+import { SvgProps } from './type'
 
 export const BrandIcon = ({ fill, classname, size }: SvgProps) => (
   <svg

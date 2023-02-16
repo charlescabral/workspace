@@ -7,5 +7,5 @@ export const Main = styled('main', {
   alignContent: 'center',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '100vh'
+  minHeight: '100vh'
 })
