@@ -3,7 +3,7 @@ import Hello from '.'
 import { HelloProps } from './type'
 
 export default {
-  title: 'Hello Component',
+  title: 'Workspace/components/Hello',
   component: Hello
 } as Meta<HelloProps>
 

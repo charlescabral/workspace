@@ -3,7 +3,7 @@ import Button from '.'
 import { ButtonProps } from './type'
 
 export default {
-  title: 'Button',
+  title: 'Workspace/components/Button',
   component: Button
 } as Meta<ButtonProps>
 

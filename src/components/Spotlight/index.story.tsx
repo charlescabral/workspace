@@ -2,9 +2,9 @@ import { Meta } from '@storybook/react'
 import Spotlight from '.'
 
 export default {
-  title: 'Spotlight',
+  title: 'Workspace/components/Spotlight',
   component: Spotlight
-} as Meta<unknown>
+} as Meta<typeof Spotlight>
 
 export const Basic = {
   args: {

@@ -2,9 +2,9 @@ import { Meta } from '@storybook/react'
 import GSBoxes from '.'
 
 export default {
-  title: 'GSBoxes',
+  title: 'Workspace/components/GSBoxes',
   component: GSBoxes
-} as Meta<unknown>
+} as Meta<typeof GSBoxes>
 
 export const Basic = {
   args: {

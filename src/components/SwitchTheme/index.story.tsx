@@ -2,9 +2,9 @@ import { Meta } from '@storybook/react'
 import SwitchTheme from '.'
 
 export default {
-  title: 'SwitchTheme',
+  title: 'Workspace/components/SwitchTheme',
   component: SwitchTheme
-} as Meta
+} as Meta<typeof SwitchTheme>
 
 export const Basic = {
   args: {

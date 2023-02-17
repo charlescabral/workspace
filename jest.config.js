@@ -6,8 +6,9 @@ module.exports = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
-    '!src/**/.stories.tsx',
+    '!src/**/*.story.tsx',
     '!src/helpers/**',
+    '!src/providers/**',
     '!src/components/SvgIcons/**',
     '!src/**/*.d.ts',
     '!src/styles/**',

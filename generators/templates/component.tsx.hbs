@@ -1,11 +1,16 @@
+import { FC } from 'react'
 import { {{pascalCase name}}Props } from './type'
 import { Div } from './style'
 
-const {{pascalCase name}} = ({ text }: {{pascalCase name}}Props) => (
-  <Div>
-    <h2>{{pascalCase name}} Instance</h2>
-    <p>{text}</p>
-  </Div>
-)
+const {{pascalCase name}}: FC<{{pascalCase name}}Props> = ({ text }) => {
+  return (
+    <Div>
+      <h2>{{pascalCase name}} Instance</h2>
+      <p>{text}</p>
+    </Div>
+  )
+}
 
 export default {{pascalCase name}}
+
+

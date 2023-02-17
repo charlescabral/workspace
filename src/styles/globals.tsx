@@ -17,13 +17,13 @@ export const injectGlobalStyles = globalCss({
     padding: 0,
     color: '$text',
     backgroundColor: '$bgSite',
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    webkitFontSmoothing: 'antialiased'
+    webkitFontSmoothing: 'antialiased',
+    fontFamily: '$sans'
   },
   '#__next': {
-    height: '100vh',
-    width: '100%'
+    minHeight: '98vh',
+    width: '100%',
+    display: 'inline-grid'
   },
   button: {
     transformStyle: 'preserve-3d',

@@ -1,19 +1,24 @@
-import dynamic from 'next/dynamic'
-import Hello from '@/components/Hello'
-import { BrandIcon } from '@/icons'
+import { FC } from 'react'
+
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+
 import { HomeProps } from './type'
+import { BrandIcon } from '@/icons'
+import { colors } from '@/styles/colors'
 import { Main } from './style'
+import { Wrapper } from '@/components/Commons'
 
-const SwitchTheme = dynamic(() => import('@/components/SwitchTheme'), {
-  ssr: false
-})
-
-export default function HomeTemplate({ name }: HomeProps) {
+const HomeTemplate: FC<HomeProps> = () => {
+  const { $$gray02 } = colors
   return (
-    <Main>
-      <BrandIcon fill="gray" size={100} />
-      <Hello name={name} />
-      <SwitchTheme />
-    </Main>
+    <Wrapper>
+      <Header />
+      <Main>
+        <BrandIcon size={68} fill={$$gray02} />
+      </Main>
+      <Footer />
+    </Wrapper>
   )
 }
+export default HomeTemplate
