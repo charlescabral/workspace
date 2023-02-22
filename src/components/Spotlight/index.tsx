@@ -2,7 +2,7 @@ import { useRef } from 'react'
 // import { gsap } from 'gsap'
 import { Section, BgGradient } from './style'
 
-const Spotlight = () => {
+export default function Spotlight() {
   const bg = useRef<HTMLDivElement>(null)
 
   // useEffect(() => {}, [])
@@ -14,5 +14,3 @@ const Spotlight = () => {
     </Section>
   )
 }
-
-export default Spotlight

@@ -1,0 +1,7 @@
+export { blue as blueDark } from './blue'
+export { purple as purpleDark } from './purple'
+export { red as redDark } from './red'
+export { yellow as yellowDark } from './yellow'
+export { orange as orangeDark } from './orange'
+export { green as greenDark } from './green'
+export { gray as grayDark } from './gray'

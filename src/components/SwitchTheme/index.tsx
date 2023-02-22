@@ -1,12 +1,13 @@
 import { useTheme } from '@/providers/theme'
 import { Button, Switcher } from './style'
-import { colors } from '@/styles/colors'
+import { yellow, purpleDark } from '@/styles/colors'
 import { playFile } from '@/helpers'
 import Icon from './Icon'
 
-const SwitchTheme = () => {
+export default function SwitchTheme() {
   const { theme, setTheme } = useTheme()
-  const { $$purple, $$yellow } = colors
+  const { yellow10 } = yellow
+  const { purple8 } = purpleDark
 
   const isLight = theme === 'light'
 
@@ -18,10 +19,8 @@ const SwitchTheme = () => {
   return (
     <Switcher onClick={handleColorChange} checked={isLight}>
       <Button>
-        <Icon size={22} colorSun={$$yellow} colorMoon={$$purple} />
+        <Icon size={22} colorSun={yellow10} colorMoon={purple8} />
       </Button>
     </Switcher>
   )
 }
-
-export default SwitchTheme

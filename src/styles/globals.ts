@@ -1,12 +1,19 @@
 import { globalCss } from '.'
-import { colors } from './colors'
 
 export const injectGlobalStyles = globalCss({
-  ':root': { ...colors },
   '*': {
     boxSizing: 'border-box',
     '&::after, &::before': {
       boxSizing: 'border-box'
+    },
+    '&::selection': {
+      backgroundColor: '$gray5',
+      userSelect: '$gray5'
+    },
+    '&:focus-visible': {
+      outline: 'none',
+      boxShadow: '0px 0px 0px .2rem $purple9',
+      borderRadius: '$xs'
     }
   },
   body: {
@@ -19,6 +26,9 @@ export const injectGlobalStyles = globalCss({
     backgroundColor: '$bgSite',
     webkitFontSmoothing: 'antialiased',
     fontFamily: '$sans'
+  },
+  'code, pre': {
+    color: '$textLight'
   },
   '#__next': {
     minHeight: '98vh',

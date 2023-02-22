@@ -1,8 +1,7 @@
-import { FC, useMemo } from 'react'
-import { FooterProps } from './type'
+import { useMemo } from 'react'
 import { FooterMain } from './style'
 
-const Footer: FC<FooterProps> = () => {
+export default function Footer() {
   const year = useMemo(() => new Date().getFullYear(), [])
 
   return (
@@ -11,5 +10,3 @@ const Footer: FC<FooterProps> = () => {
     </FooterMain>
   )
 }
-
-export default Footer

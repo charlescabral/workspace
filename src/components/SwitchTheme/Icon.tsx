@@ -5,7 +5,7 @@ import { IconProps } from './type'
 import { useIsomorphicLayoutEffect } from '@/helpers/hooks'
 import { useTheme } from '@/providers/theme'
 
-const SwicthIcon = ({ size, colorMoon, colorSun }: IconProps) => {
+export default function SwicthIcon({ size, colorMoon, colorSun }: IconProps) {
   const { theme } = useTheme()
   const Sun = useRef<SVGGElement>(null)
   const Moon = useRef<SVGPathElement>(null)
@@ -88,5 +88,3 @@ const SwicthIcon = ({ size, colorMoon, colorSun }: IconProps) => {
     </>
   )
 }
-
-export default SwicthIcon

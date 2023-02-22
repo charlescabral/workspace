@@ -12,12 +12,14 @@ export const Switcher = styled(Switch.Root, {
   boxShadow: 'inset rgb(0 0 0 / 16%) 0px 2px 3px 1px',
 
   '&:focus-visible': {
-    outline: 'none',
-    boxShadow: '0 0 0 2px $purple'
+    boxShadow: '0 0 0 .2rem $purple9'
   },
-  '&:active': {
-    '> span': {
-      width: '65%'
+
+  '@lg': {
+    '&:active': {
+      '> span': {
+        width: '65%'
+      }
     }
   }
 })
@@ -34,8 +36,8 @@ export const Button = styled(Switch.Thumb, {
   left: '1px',
   margin: '3px 0',
   position: 'inherit',
-  boxShadow: '#0000004d 0 2px 3px 1px',
-  transition: '100ms',
+  boxShadow: '$md',
+  transition: 'all 100ms ease 0s',
   transform: 'translateX(2px)',
   willChange: 'transform',
   overflow: 'hidden',
