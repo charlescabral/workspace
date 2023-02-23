@@ -10,7 +10,7 @@ export default function Spotlight() {
   return (
     <Section>
       <BgGradient ref={bg} />
-      <h2>Spotlight Instance</h2>
+      <h2>Spotlight</h2>
     </Section>
   )
 }

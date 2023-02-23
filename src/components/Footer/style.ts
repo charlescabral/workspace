@@ -2,5 +2,9 @@ import { styled } from '@/styles'
 
 export const FooterMain = styled('footer', {
   gridArea: 'footer',
-  textAlign: 'center'
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '$10'
 })

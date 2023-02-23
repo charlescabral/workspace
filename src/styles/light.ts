@@ -24,6 +24,7 @@ export const light = {
     selection: '$gray3',
     border: '$gray2',
     bgSwitcher: '$black4',
+    colorSwitcher: '$white12',
     bgSite: '$gray3',
     backgroundAlpha: 'rgba(255, 255, 255, 0.8)',
     foreground: '$gray4',

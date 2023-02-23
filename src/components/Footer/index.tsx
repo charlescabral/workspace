@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useMemo } from 'react'
 import { FooterMain } from './style'
 
@@ -6,7 +7,7 @@ export default function Footer() {
 
   return (
     <FooterMain>
-      <code>{year}</code>
+      <code style={{ margin: '1rem 0' }}>{year}</code>
     </FooterMain>
   )
 }

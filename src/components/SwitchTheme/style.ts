@@ -31,7 +31,7 @@ export const Button = styled(Switch.Thumb, {
   justifyContent: 'center',
   width: '22px',
   height: '22px',
-  backgroundColor: 'white',
+  backgroundColor: '$colorSwitcher',
   borderRadius: '50%',
   left: '1px',
   margin: '3px 0',

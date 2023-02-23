@@ -18,6 +18,7 @@ export const dark = {
     ...orangeDark,
     ...grayDark,
     bgSwitcher: '$black12',
+    colorSwitcher: '$blue8',
     cardBg: '$gray6'
   },
   shadows: {
