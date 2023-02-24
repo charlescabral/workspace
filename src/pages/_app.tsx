@@ -29,6 +29,6 @@ export default function App({ Component, pageProps }: AppProps) {
   )
 }
 
-export function reportWebVitals(metric: unknown) {
-  console.table(metric)
-}
+// export function reportWebVitals(metric: unknown) {
+//   console.table(metric)
+// }

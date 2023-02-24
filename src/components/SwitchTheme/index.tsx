@@ -17,7 +17,7 @@ export default function SwitchTheme() {
 
   const handleColorChange = () => {
     setTheme(isLight ? 'dark' : 'light')
-    ctx.resume().then(() => (isLight ? darkSound.play() : lightSound.play()))
+    isLight ? darkSound.play() : lightSound.play()
   }
 
   return (
