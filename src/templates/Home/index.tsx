@@ -1,3 +1,4 @@
+import { BrandIcon } from '@/icons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -8,7 +9,9 @@ export default function HomeTemplate() {
   return (
     <Wrapper>
       <Header />
-      <Main></Main>
+      <Main>
+        <BrandIcon size={68} fill={'hsl(207, 5.6%, 31.6%)'} />
+      </Main>
       <Footer />
     </Wrapper>
   )

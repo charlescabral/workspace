@@ -1,4 +1,3 @@
-// import HomeTemplate from '@/templates/Home'
 import HomeTemplate from '@/templates/Home'
 import { useRouter } from 'next/router'
 import { InferGetStaticPropsType } from 'next/types'
