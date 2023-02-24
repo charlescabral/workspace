@@ -7,13 +7,12 @@ import Icon from './Icon'
 export default function SwitchTheme() {
   const { theme, setTheme } = useTheme()
   const { yellow10 } = yellow
-  const { ctx, volume } = Howler
   const darkSound = new Howl({ src: ['/mp3/dark.mp3'], preload: true })
   const lightSound = new Howl({ src: ['/mp3/light.mp3'], preload: true })
 
   const isLight = theme === 'light'
 
-  !!ctx && volume(0.5)
+  Howler.volume(0.5)
 
   const handleColorChange = () => {
     setTheme(isLight ? 'dark' : 'light')
