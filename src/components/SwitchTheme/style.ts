@@ -11,16 +11,12 @@ export const Switcher = styled(Switch.Root, {
   webkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
   boxShadow: 'inset rgb(0 0 0 / 16%) 0px 2px 3px 1px',
 
-  '&:focus-visible': {
-    boxShadow: '0 0 0 .2rem $purple9'
+  '@motion': {
+    transition: 'none'
   },
 
-  '@lg': {
-    '&:active': {
-      '> span': {
-        width: '65%'
-      }
-    }
+  '&:focus-visible': {
+    boxShadow: '0 0 0 .2rem $purple9'
   }
 })
 
@@ -41,6 +37,10 @@ export const Button = styled(Switch.Thumb, {
   transform: 'translateX(2px)',
   willChange: 'transform',
   overflow: 'hidden',
+
+  '@motion': {
+    transition: 'none'
+  },
 
   '&[data-state="checked"]': {
     left: 'calc(100% - 3px)',

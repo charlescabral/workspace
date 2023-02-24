@@ -7,8 +7,8 @@ import Icon from './Icon'
 export default function SwitchTheme() {
   const { theme, setTheme } = useTheme()
   const { yellow10 } = yellow
-  const darkSound = new Howl({ src: ['/mp3/dark.mp3'], preload: true })
-  const lightSound = new Howl({ src: ['/mp3/light.mp3'], preload: true })
+  const darkSound = new Howl({ src: ['/mp3/dark.mp3'] })
+  const lightSound = new Howl({ src: ['/mp3/light.mp3'] })
 
   const isLight = theme === 'light'
 
