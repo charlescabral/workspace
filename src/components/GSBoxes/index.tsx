@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { gsap } from 'gsap'
 import Box from './Box'
 
-const GSBoxes = () => {
+export default function GSBoxes() {
   const box1 = useRef<HTMLDivElement>(null)
   const box2 = useRef<HTMLDivElement>(null)
   const box3 = useRef<HTMLDivElement>(null)
@@ -25,5 +25,3 @@ const GSBoxes = () => {
     </>
   )
 }
-
-export default GSBoxes

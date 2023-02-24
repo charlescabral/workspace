@@ -2,6 +2,7 @@ import { createStitches } from '@stitches/react'
 import common from './common'
 import { dark } from './dark'
 import { light } from './light'
+import { black, white } from './colors'
 
 export const {
   styled,
@@ -18,6 +19,8 @@ export const {
   theme: {
     ...common.theme,
     colors: {
+      ...black,
+      ...white,
       ...light.colors
     },
     shadows: {

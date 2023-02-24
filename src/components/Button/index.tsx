@@ -1,13 +1,10 @@
-import { FC } from 'react'
 import { ButtonProps } from './type'
 import { Button } from './style'
 
-const ButtonOut: FC<ButtonProps> = ({ text }) => {
+export default function ButtonOut({ text }: ButtonProps) {
   return (
     <Button>
       <p>{text}</p>
     </Button>
   )
 }
-
-export default ButtonOut

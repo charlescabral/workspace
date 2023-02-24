@@ -7,5 +7,7 @@ export const HeaderMain = styled('header', {
   flexDirection: 'row',
   flexWrap: 'nowrap',
   alignItems: 'center',
-  justifyContent: 'space-around'
+  justifyContent: 'space-around',
+  padding: '$9',
+  marginBottom: '$12'
 })

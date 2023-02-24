@@ -5,7 +5,7 @@ import { theme, darkTheme } from '@/styles'
 import { ThemeProvider } from '@/providers/theme'
 import SEO from '~/next-seo.config'
 
-const App = ({ Component, pageProps }: AppProps) => {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider
       attribute="class"
@@ -29,4 +29,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   )
 }
 
-export default App
+export function reportWebVitals(metric: unknown) {
+  console.table(metric)
+}
