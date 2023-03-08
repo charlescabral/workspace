@@ -1,6 +1,8 @@
 import { globalCss } from '.'
+import { progressBar } from '@/ui/Nprogress/style'
 
 export const injectGlobalStyles = globalCss({
+  ...progressBar,
   '*': {
     boxSizing: 'border-box',
     '&::after, &::before': {

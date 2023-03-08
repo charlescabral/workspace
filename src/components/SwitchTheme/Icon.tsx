@@ -2,8 +2,8 @@
 import { gsap } from 'gsap'
 import { useEffect, useMemo, useRef } from 'react'
 import { IconProps } from './type'
-import { useIsomorphicLayoutEffect } from '@/helpers/hooks'
-import { useTheme } from '@/providers/theme'
+import { useIsomorphicLayoutEffect } from '@/hooks'
+import { useTheme } from '@/contexts/theme'
 
 export default function SwicthIcon({ size, colorMoon, colorSun }: IconProps) {
   const { theme } = useTheme()
@@ -22,7 +22,7 @@ export default function SwicthIcon({ size, colorMoon, colorSun }: IconProps) {
 
   useIsomorphicLayoutEffect(() => {
     timeline
-      .to(Sun.current, { y: 46 }, '-=1')
+      .to(Sun.current, { y: 46 })
       .to(Moon.current, { y: 0 })
       .totalDuration(0.5)
       .eventCallback('onReverseComplete', rotateSun)

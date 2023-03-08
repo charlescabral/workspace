@@ -3,7 +3,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import * as all from '@/styles/colors'
 import { styled } from '@/styles'
-import { useTheme } from '@/providers/theme'
+import { useTheme } from '@/contexts/theme'
 import { useEffect, useState } from 'react'
 
 const Container = styled('div', {
@@ -25,6 +25,7 @@ const Box = styled('div', { size: '3rem' })
 
 export default function Colors() {
   const { theme } = useTheme()
+  const [palette, setPalette] = useState([])
 
   const [light, dark] = Object.entries(all).reduce(
     ([light, dark], [name, colors]) => {
@@ -35,16 +36,15 @@ export default function Colors() {
     },
     [[], []]
   )
-  const [palette, setPalette] = useState([])
 
   useEffect(() => setPalette(theme === 'light' ? light : dark), [theme])
 
   return (
     <Container>
       <h2>Colors</h2>
-      {palette.map((section: any, i: number) => (
+      {palette.map((section: string[], i: number) => (
         <Section key={i}>
-          {section.map((color: any, c: number) => (
+          {section.map((color: string, c: number) => (
             <Box key={c} css={{ backgroundColor: color }} />
           ))}
         </Section>
