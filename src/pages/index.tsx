@@ -1,16 +1,17 @@
-import HomeTemplate from '@/templates/Home'
-import { useRouter } from 'next/router'
 import { InferGetStaticPropsType } from 'next/types'
+import HomeTemplate from '@/templates/Home'
+import { Suspense } from 'react'
 
 export default function Home({
   name
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const router = useRouter()
-
-  // loading
-  if (router.isFallback) return <>Loading</>
-
-  return <HomeTemplate {...name} />
+  return (
+    <>
+      <Suspense fallback={<div>loading</div>}>
+        <HomeTemplate {...name} />
+      </Suspense>
+    </>
+  )
 }
 
 export const getStaticProps = async () => {

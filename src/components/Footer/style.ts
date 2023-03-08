@@ -11,9 +11,10 @@ export const FooterMain = styled('footer', {
 
 export const IconsLicenseCCbySA = styled('span', {
   $$iconSize: '1rem',
+  $$iconGap: '$$iconSize/2',
   display: 'inline-block',
   backgroundImage: 'url(/img/cc-by.svg)',
-  width: 'calc(3* $$iconSize + 4px)',
+  width: 'calc(3* $$iconSize + $$iconGap)',
   height: '$$iconSize',
   float: 'left',
   position: 'relative',
@@ -32,11 +33,11 @@ export const IconsLicenseCCbySA = styled('span', {
     content: '""'
   },
   '&::before': {
-    left: 'calc($$iconSize + 2px)',
+    left: 'calc($$iconSize + $$iconGap/2)',
     backgroundImage: 'url(/img/cc-nc.svg)'
   },
   '&::after': {
-    left: 'calc(2 * $$iconSize + 4px)',
+    left: 'calc(2 * $$iconSize + $$iconGap)',
     backgroundImage: 'url(/img/cc-sa.svg)'
   }
 })

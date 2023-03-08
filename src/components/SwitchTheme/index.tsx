@@ -1,4 +1,4 @@
-import { useTheme } from '@/providers/theme'
+import { useTheme } from '@/contexts/theme'
 import { Button, Switcher } from './style'
 import { yellow } from '@/styles/colors'
 import { Howl, Howler } from 'howler'
@@ -7,8 +7,8 @@ import Icon from './Icon'
 export default function SwitchTheme() {
   const { theme, setTheme } = useTheme()
   const { yellow10 } = yellow
-  const darkSound = new Howl({ src: ['/mp3/dark.mp3'] })
-  const lightSound = new Howl({ src: ['/mp3/light.mp3'] })
+  const darkSound = new Howl({ src: ['/audio/dark.mp3'] })
+  const lightSound = new Howl({ src: ['/audio/light.mp3'] })
 
   const isLight = theme === 'light'
 
