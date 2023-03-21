@@ -1,11 +1,10 @@
-import { TreeDataProps } from '@/types'
+import { PageProps } from '@/types'
 import HomeTemplate from '@/templates/Home'
 import { Suspense } from 'react'
-import { getMarkdownContent } from '@/api'
+import { getMarkdownContent, getStore } from '@/api'
 import Loader from '@/components/Loader'
-import { callAPI } from '@/lib'
 
-export default function Home(props: TreeDataProps) {
+export default function Home(props: PageProps) {
   return (
     <>
       <Suspense fallback={<Loader onFinish={() => console.log('carregou')} />}>
@@ -16,15 +15,15 @@ export default function Home(props: TreeDataProps) {
 }
 
 export const getStaticProps = async () => {
-  const api = await callAPI('store')
+  const store = await getStore()
   const partials = await getMarkdownContent('partials', ['bio', 'trajectory'])
   const projects = await getMarkdownContent('projects')
 
   return {
     props: {
       partials,
-      projects: projects,
-      store: api.store,
+      projects,
+      store,
       id: 'home'
     }
   }

@@ -1,9 +1,8 @@
-// import { DataMdProps } from '@/types'
-import { PartialProps } from '@/types'
+import { MarkdownProps } from '@/types'
 import { Container } from '@/ui/Structure'
 import { Article } from './style'
 
-export default function Bio({ html }: PartialProps) {
+export default function Bio({ html }: MarkdownProps) {
   return (
     <Article>
       <Container size="xs" dangerouslySetInnerHTML={{ __html: html }} />

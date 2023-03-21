@@ -1,5 +1,3 @@
-import { MdProps } from '.'
-
 export type SocialProps = {
   name: string
   icon: string
@@ -13,9 +11,4 @@ export type StoreDataProps = {
 
 export interface StoreApiProps {
   store: StoreDataProps
-}
-
-export interface StoreStateProps {
-  storeState: MdProps
-  setStoreState: (store: StoreApiProps) => void
 }

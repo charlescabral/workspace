@@ -1,13 +1,14 @@
 // import Image from 'next/image'
-import { ProjectCardProps } from './type'
+import { MarkdownProps } from '@/types'
 import { ProjectItem, Project } from './style'
 
-export default function ProjectCard(props: ProjectCardProps) {
-  console.log(props)
+export default function ProjectCard({ html, data }: MarkdownProps) {
+  const { title } = data
+  console.log('ProjectCard', html)
 
   return (
     <ProjectItem>
-      <Project>{/* <Image alt={title} fill={true} src={phone} /> */}</Project>
+      <Project>{title}</Project>
     </ProjectItem>
   )
 }

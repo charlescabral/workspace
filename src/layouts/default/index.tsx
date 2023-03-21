@@ -6,7 +6,7 @@ import TransitionLayout from '@/contexts/animation/layout'
 import { Main, Wrapper } from '@/ui/Structure'
 import Header from '@/partials/Header'
 import Footer from '@/partials/Footer'
-import { Cursor } from '@/ui/Cursor'
+// import { Cursor } from '@/ui/Cursor'
 
 export default function Default({ children }: PropsWithChildren) {
   return (
@@ -16,7 +16,7 @@ export default function Default({ children }: PropsWithChildren) {
           <Header />
           <Main>{children}</Main>
           <Footer />
-          <Cursor />
+          {/* <Cursor /> */}
         </Wrapper>
       </TransitionLayout>
     </TransitionProvider>

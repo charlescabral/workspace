@@ -1,22 +1,23 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/no-children-prop */
-import { ProjectCardProps } from './type'
+
 import { Container } from '@/ui/Structure'
 import { ProjectsMain, ProjectsList } from './style'
 import ProjectCard from './ProjectCard'
-// import { data } from '@/data'
+import { MarkdownProps, PartialsProps } from '@/types'
+import Typography from '@/components/Typography'
 
-export default function Projects({ projects }: any) {
+export default function Projects({ projects }: PartialsProps) {
   return (
     <ProjectsMain>
       <Container size="lg">
         <Container size="xs">
-          {/* <Markdown md={`## Alguns Projetos`} /> */}
+          <Typography as={'h2'}>Alguns Projetos</Typography>
         </Container>
         <ProjectsList>
-          {projects.map((project: ProjectCardProps, i: number) => (
-            <ProjectCard key={i} {...project} />
-          ))}
+          {projects.map((projectProps: MarkdownProps, i: number) => {
+            const data = Object.values(projectProps)[0] as MarkdownProps
+            return <ProjectCard key={i} {...data} />
+          })}
         </ProjectsList>
       </Container>
     </ProjectsMain>

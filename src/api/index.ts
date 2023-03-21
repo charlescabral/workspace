@@ -1,5 +1,5 @@
 import { markdownToHtml } from '@/lib'
-import { DataMdProps, MdProps } from '@/types'
+import { DataMdProps, PartialsProps, StoreDataProps } from '@/types'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { join } from 'path'
@@ -19,10 +19,14 @@ export function getFiles(dir: string) {
   return fs.readdirSync(dir)
 }
 
-const formatData = ({ file, data, content }: DataMdProps): Promise<MdProps> => {
+const formatData = ({
+  file,
+  data,
+  content
+}: DataMdProps): Promise<PartialsProps> => {
   return new Promise((resolve) => {
     markdownToHtml(content).then((html: string) =>
-      resolve({ [file]: { data, html } } as MdProps)
+      resolve({ [file]: { data, html } } as unknown as PartialsProps)
     )
   })
 }
@@ -43,6 +47,19 @@ export async function getMarkdownContent(folder: string, files: string[] = []) {
     )
 
   return await readFiles()
+}
+
+export async function getStore() {
+  const dir = join(process.cwd(), `content/`)
+  const readStore = async () => {
+    const fullPath = join(dir, `store.md`)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const { data } = matter(fileContents)
+
+    return data as StoreDataProps
+  }
+
+  return await readStore()
 }
 
 export * from './posts'

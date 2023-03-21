@@ -1,13 +1,13 @@
 import { SvgProps } from './type'
 import { css } from '@/styles'
 
-export const BrandIcon = ({ fill, classname, size, inlineStyle }: SvgProps) => {
+export const BrandIcon = ({ fill, size, inlineStyle }: SvgProps) => {
   const style = css({ ...inlineStyle })
   const icon = css({ fill })
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={`${classname} ${style()}`}
+      className={style()}
       viewBox="0 0 100 100"
       width={size}
       height={size}

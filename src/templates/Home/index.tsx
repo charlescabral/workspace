@@ -1,4 +1,4 @@
-import { PartialsProps, TreeDataProps, ContentProps } from '@/types'
+import { PartialProps, MarkdownProps, PageProps } from '@/types'
 import Bio from '@/partials/Bio'
 import Projects from '@/partials/Projects'
 import Spotlight from '@/partials/Spotlight'
@@ -7,23 +7,25 @@ import { useIsomorphicLayoutEffect } from '@/hooks'
 import { useState } from 'react'
 import { getMdItem } from '@/lib'
 
-export default function HomeTemplate({ partials, projects }: TreeDataProps) {
-  const [partial, setPartial] = useState<PartialsProps>({})
-  const bio = getMdItem('bio', partials) as ContentProps
-  const trajectory = getMdItem('trajectory', partials) as ContentProps
+export default function HomeTemplate({ partials, projects }: PageProps) {
+  const [partial, setPartial] = useState<PartialProps>()
 
-  useIsomorphicLayoutEffect(() => {
-    setPartial({ bio, trajectory })
-  }, [bio, trajectory])
+  const bio = getMdItem('bio', partials) as MarkdownProps
+  const trajectory = getMdItem('trajectory', partials) as MarkdownProps
 
-  return (
-    partials && (
-      <>
-        <Spotlight />
-        <Bio html={''} {...partial.bio} />
-        <Trajectory html={''} {...partial.trajectory} />
-        <Projects projects={projects} />
-      </>
-    )
+  useIsomorphicLayoutEffect(
+    () => setPartial({ bio, trajectory }),
+    [bio, trajectory]
+  )
+
+  return partial ? (
+    <>
+      <Spotlight />
+      <Bio {...partial.bio} />
+      <Trajectory {...partial.trajectory} />
+      <Projects projects={projects} />
+    </>
+  ) : (
+    <></>
   )
 }
