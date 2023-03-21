@@ -1,10 +1,10 @@
 import { FadeInOut } from '@/animations'
-import { Div } from './style'
+import { Container } from '@/ui/Structure'
 
 export default function BlogTemplate() {
   return (
     <FadeInOut>
-      <Div>Blog</Div>
+      <Container size={'lg'}>Blog</Container>
     </FadeInOut>
   )
 }

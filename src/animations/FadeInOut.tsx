@@ -15,7 +15,7 @@ export default function FadeInOut({ children }: InOutProps) {
     if (ref.current) {
       gsap.to(ref.current, {
         opacity: 1,
-        duration: 0.4
+        duration: 1.4
       })
       if (timeline) {
         timeline.add(

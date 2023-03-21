@@ -1,26 +1,31 @@
-import { InferGetStaticPropsType } from 'next/types'
+import { TreeDataProps } from '@/types'
 import HomeTemplate from '@/templates/Home'
 import { Suspense } from 'react'
+import { getMarkdownContent } from '@/api'
+import Loader from '@/components/Loader'
+import { callAPI } from '@/lib'
 
-export default function Home({
-  name
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home(props: TreeDataProps) {
   return (
     <>
-      <Suspense fallback={<div>loading</div>}>
-        <HomeTemplate {...name} />
+      <Suspense fallback={<Loader onFinish={() => console.log('carregou')} />}>
+        <HomeTemplate {...props} />
       </Suspense>
     </>
   )
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://charlescabral.com/api/hello')
-  const name = await res.json()
+  const api = await callAPI('store')
+  const partials = await getMarkdownContent('partials', ['bio', 'trajectory'])
+  const projects = await getMarkdownContent('projects')
 
   return {
     props: {
-      name
+      partials,
+      projects: projects,
+      store: api.store,
+      id: 'home'
     }
   }
 }

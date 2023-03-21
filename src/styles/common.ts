@@ -78,6 +78,11 @@ export const defaultTokens = {
     fit: 'fit-content',
     screen: '100vw',
     full: '100%',
+    'bp-xs': '650px',
+    'bp-sm': '960px',
+    'bp-md': '1280px',
+    'bp-lg': '1400px',
+    'bp-xl': '1920px',
     px: '1px',
     1: '0.125rem',
     2: '0.25rem',
@@ -114,7 +119,7 @@ export const defaultTokens = {
     96: '24rem'
   },
   radii: {
-    xs: '7px',
+    xs: '5px',
     sm: '9px',
     md: '12px',
     base: '14px',
@@ -122,6 +127,7 @@ export const defaultTokens = {
     xl: '18px',
     '2xl': '24px',
     '3xl': '32px',
+    '4xl': '42px',
     squared: '33%',
     rounded: '50%',
     pill: '9999px'
@@ -150,6 +156,13 @@ export const defaultTokens = {
     card: 'transform 0.25s ease 0s, filter 0.25s ease 0s, box-shadow 0.25s ease 0s',
     dropdownItem:
       'background 0.12s ease, transform 0.12s ease, color 0.12s ease, box-shadow 0.12s ease 0s'
+  },
+  sizes: {
+    xs: '650px',
+    sm: '960px',
+    md: '1280px',
+    lg: '1400px',
+    xl: '1920px'
   },
   breakpoints: {
     xs: '650px',

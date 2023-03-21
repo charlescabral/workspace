@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext } from 'react'
 import gsap from 'gsap'
 import { TransitionProviderProps, TransitionContextProps } from './type'
 

@@ -1,7 +1,7 @@
 import { css } from '@/styles'
 
 export const bar = css({
-  background: '$green8',
+  background: '$progressBar',
   position: 'fixed',
   zIndex: '9999',
   top: 0,

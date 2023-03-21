@@ -5,10 +5,15 @@ const withPWA = require('next-pwa')({
 })
 
 module.exports = withPWA({
-  images: {
-    domains: ['media.graphcms.com', 'media.graphassets.com']
-  },
   reactStrictMode: true,
+  images: {
+    domains: [
+      'media.graphcms.com',
+      'media.graphassets.com',
+      'images.unsplash.com',
+      'unpkg.com'
+    ]
+  },
   i18n: {
     locales: ['pt'],
     defaultLocale: 'pt'

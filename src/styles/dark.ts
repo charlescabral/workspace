@@ -17,9 +17,19 @@ export const dark = {
     ...redDark,
     ...orangeDark,
     ...grayDark,
+    primary: '$purple7',
+    secondary: '$purple9',
+    brand: '$white12',
+    bgSite: '$gray2',
     bgSwitcher: '$black12',
     colorSwitcher: '$purple8',
-    cardBg: '$gray6'
+    text: '$white11',
+    cardBg: '$gray6',
+    cursorCircle: '$white10',
+    glassPhone: '$black10',
+    glassDesktop: '$black12',
+    glassDesktopLight: '$black10',
+    spotlightTitle: '$gray6'
   },
   shadows: {
     ...purpleDark,

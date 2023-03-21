@@ -1,4 +1,14 @@
-import { blue, purple, green, yellow, red, orange, gray } from './colors'
+import {
+  blue,
+  purple,
+  green,
+  yellow,
+  red,
+  orange,
+  gray,
+  black,
+  white
+} from './colors'
 
 export const light = {
   colors: {
@@ -9,14 +19,14 @@ export const light = {
     ...red,
     ...orange,
     ...gray,
-    primary: '$gray2',
-    secondary: '$green2',
+    primary: '$green10',
+    secondary: '$green12',
     success: '$green5',
     warning: '$orange5',
     error: '$red5',
     neutral: '$gray6',
     accent: '$$gray02',
-    text: '$gray9',
+    text: '$gray11',
     textLight: '$gray8',
     link: '$blue4',
     codeLight: '$gray8',
@@ -25,14 +35,24 @@ export const light = {
     border: '$gray2',
     bgSwitcher: '$black4',
     colorSwitcher: '$white12',
-    bgSite: '$gray3',
+    bgSite: '$white12',
     backgroundAlpha: 'rgba(255, 255, 255, 0.8)',
     foreground: '$gray4',
     backgroundContrast: '$white1',
-    cardBg: '$white12'
+    cardBg: '$white12',
+    brand: '$gray11',
+    cursorCircle: '$black6',
+    cursorActive: '$primary',
+    glassPhone: '$white10',
+    glassDesktop: '$white12',
+    glassDesktopLight: '$white8',
+    progressBar: '$primary',
+    spotlightTitle: '$white12'
   },
   shadows: {
     ...purple,
+    ...black,
+    ...white,
     xl: `
       0 3px 3px rgba(0, 0, 0, 0.1),
       0 7px 5px rgba(0, 0, 0, 0.048),
