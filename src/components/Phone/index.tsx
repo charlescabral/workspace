@@ -6,15 +6,15 @@ import { Coord, PhoneProps } from './type'
 import { useIntersectionObserver } from '@/hooks'
 
 const options = {
-  perspective: 500,
-  constrain: 50
+  perspective: 1000,
+  constrain: 20
 }
 
 const getAxis = ({ clientRect, clientX, clientY }: Coord) => {
   const { constrain } = options
-  const { height, width, y, x } = clientRect
+  const { height, x } = clientRect
   const axisY = ((clientX - x - height / 4) / constrain) * 2
-  const axisX = -(clientY - y - width / 2) / constrain
+  const axisX = -(clientY - height) / constrain
   return { y: axisY, x: axisX }
 }
 
@@ -44,6 +44,7 @@ export default function Phone({ children, css }: PhoneProps) {
         const { x, y } = getAxis({ clientX, clientY, clientRect })
 
         gsap.to(phone.current, {
+          scale: 1.1,
           rotateY: y,
           rotateX: x,
           ease: 'back.out',
@@ -72,6 +73,7 @@ export default function Phone({ children, css }: PhoneProps) {
             ease: 'back.out'
           },
           {
+            scale: 1,
             rotationY: 0,
             rotationX: 0,
             ease: 'back.out'

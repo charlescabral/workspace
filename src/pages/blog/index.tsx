@@ -1,31 +1,29 @@
 import { Suspense } from 'react'
 import Head from 'next/head'
-import { InferGetStaticPropsType } from 'next/types'
 
 import BlogTemplate from '@/templates/Blog'
-import { callAPI } from '@/lib'
+import { getStore } from '@/api'
+import { PageProps } from '@/types'
 
-export default function Blog({
-  store
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Blog(props: PageProps) {
   return (
     <>
       <Head>
         <title>Blog</title>
       </Head>
       <Suspense fallback={<div>loading</div>}>
-        <BlogTemplate {...store} />
+        <BlogTemplate {...props} />
       </Suspense>
     </>
   )
 }
 
 export const getStaticProps = async () => {
-  const api = await callAPI('store')
+  const store = await getStore()
 
   return {
     props: {
-      store: api.store
+      store
     }
   }
 }

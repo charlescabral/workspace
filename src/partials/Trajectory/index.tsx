@@ -8,7 +8,7 @@ export default function Trajectory({ html, data }: MarkdownProps) {
   return (
     <Article>
       <Container size="xs">
-        <Typography as={'h2'}>{title}</Typography>
+        <Typography as={'h3'}>{title}</Typography>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Article>

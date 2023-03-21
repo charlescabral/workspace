@@ -27,6 +27,6 @@ export const Project = styled('div', {
   justifyContent: 'center',
   overflow: 'hidden',
   minWidth: '100%',
-  position: 'relative'
-  // boxShadow: '$xl'
+  position: 'relative',
+  boxShadow: '$xs'
 })

@@ -3,8 +3,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 
-import { callAPI, markdownToHtml } from '@/lib'
-import { getPostBySlug, getAllPosts } from '@/api'
+import { markdownToHtml } from '@/lib'
+import { getPostBySlug, getAllPosts, getStore } from '@/api'
 import type { PostProps, Params } from '@/types'
 
 import PostTemplate from '@/templates/Blog/Post'
@@ -30,7 +30,7 @@ export default function Post({ post }: PostProps) {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const api = await callAPI('store')
+  const store = await getStore()
   const post = getPostBySlug(params.slug, [
     'title',
     'date',
@@ -45,7 +45,7 @@ export async function getStaticProps({ params }: Params) {
 
   return {
     props: {
-      store: api.store,
+      store,
       post: {
         ...post,
         content

@@ -3,24 +3,6 @@ import { styled } from '@/styles'
 export const Post = styled('article', {
   wordBreak: 'break-word',
 
-  // 'h2, h3, h4, h5, h6': {
-  //   fontWeight: '$extrabold',
-  //   lineHeight: '$md',
-  //   letterSpacing: '$wide'
-  // },
-  // 'h3, h4, h5, h6': {
-  //   color: '$gray8'
-  // },
-  h2: {
-    fontSize: '$4xl',
-    marginBottom: '$18',
-    fontWeight: '$thin'
-  },
-  // h3: { fontSize: '$3xl' },
-  // h4: { fontSize: '$2xl' },
-  // h5: { fontSize: '$xl' },
-  // h6: { fontSize: '$md' },
-
   p: {
     marginBottom: '$10'
   },

@@ -11,7 +11,7 @@ export default function Projects({ projects }: PartialsProps) {
     <ProjectsMain>
       <Container size="lg">
         <Container size="xs">
-          <Typography as={'h2'}>Alguns Projetos</Typography>
+          <Typography as={'h3'}>Alguns Projetos</Typography>
         </Container>
         <ProjectsList>
           {projects.map((projectProps: MarkdownProps, i: number) => {
