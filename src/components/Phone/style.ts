@@ -9,11 +9,11 @@ export const Scene = styled('div', {
 export const Case = styled('div', {
   backgroundColor: '$glassPhone',
   backdropFilter: 'blur(1rem)',
-  padding: '$6',
-  width: '260px',
-  height: '460px',
+  padding: '$4',
+  width: '240px',
+  height: '420px',
   textAlign: 'center',
-  borderRadius: '$4xl',
+  borderRadius: '$3xl',
   boxShadow: `
     0px 50px 100px -20px $black10,
     0px 30px 60px -30px $black10,
@@ -29,7 +29,7 @@ export const Screen = styled('div', {
   width: '100%',
   height: '100%',
   overflow: 'hidden',
-  borderRadius: '$3xl',
+  borderRadius: '$2xl',
   transformStyle: 'preserve-3d'
 })
 

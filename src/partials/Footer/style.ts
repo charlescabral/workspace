@@ -1,12 +1,11 @@
 import { styled } from '@/styles'
 
 export const FooterMain = styled('footer', {
+  backgroundColor: '$bgFooter',
+  position: 'relative',
   gridArea: 'footer',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '$10'
+  py: '$10',
+  width: '100%'
 })
 
 export const IconsLicenseCCbySA = styled('span', {

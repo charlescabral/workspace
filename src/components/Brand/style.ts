@@ -18,13 +18,13 @@ export const H1 = styled('h1', {
 
   '.name': {
     marginBottom: '$1',
-    fontSize: '$xl',
+    fontSize: '$lg',
     letterSpacing: '$wider',
     textTransform: 'uppercase'
   },
   '.career': {
     fontWeight: '$light',
-    fontSize: '$base',
+    fontSize: '$xs',
     letterSpacing: '$widest'
   }
 })

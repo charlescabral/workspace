@@ -21,6 +21,7 @@ export const dark = {
     secondary: '$purple9',
     brand: '$white12',
     bgSite: '$gray2',
+    bgFooter: '$black12',
     bgSwitcher: '$black12',
     colorSwitcher: '$purple8',
     text: '$white11',
@@ -65,6 +66,12 @@ export const dark = {
       0 2px 2px rgba(0, 0, 0, 0.8),
       0 4px 5px rgba(0, 0, 0, 0.4),
       0 10px 28px 6px rgba(0, 0, 0, 0.2)
+    `,
+    hirer: `
+      0 0 0 0.4rem $black8,
+      0 0 0 1rem $black7,
+      0 0 0 1.6rem $black6,
+      0 0 0 2.2rem $black5
     `
   },
   dropShadows: {

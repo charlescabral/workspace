@@ -2,10 +2,7 @@
 import { MarkdownProps } from '@/types'
 import { ProjectItem, Project } from './style'
 
-export default function ProjectCard({ html, data }: MarkdownProps) {
-  const { title } = data
-  console.log('ProjectCard', html)
-
+export default function ProjectCard({ data: { title } }: MarkdownProps) {
   return (
     <ProjectItem>
       <Project>{title}</Project>

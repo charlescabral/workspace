@@ -16,15 +16,17 @@ export default function Home(props: PageProps) {
 
 export const getStaticProps = async () => {
   const store = await getStore()
-  const partials = await getMarkdownContent('partials', ['bio', 'trajectory'])
+  const partials = await getMarkdownContent('partials', ['bio'])
   const projects = await getMarkdownContent('projects')
+  const trajectory = await getMarkdownContent('trajectory')
 
   return {
     props: {
-      partials,
-      projects,
+      id: 'home',
       store,
-      id: 'home'
+      partials,
+      trajectory,
+      projects
     }
   }
 }

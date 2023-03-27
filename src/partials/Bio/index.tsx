@@ -1,11 +1,19 @@
 import { MarkdownProps } from '@/types'
-import { Container } from '@/ui/Structure'
+import { Container, Row } from '@/ui/Structure'
+// import Presentation from '@/partials/Presentation'
 import { Article } from './style'
 
 export default function Bio({ html }: MarkdownProps) {
   return (
-    <Article>
-      <Container size="xs" dangerouslySetInnerHTML={{ __html: html }} />
-    </Article>
+    <>
+      <Article>
+        <Container size="xs">
+          <Row>
+            {/* <Presentation /> */}
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </Row>
+        </Container>
+      </Article>
+    </>
   )
 }

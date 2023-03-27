@@ -10,15 +10,16 @@ import Phone from '@/components/Phone'
 import AnimateSplitText from '@/components/AnimateSplitText'
 import Typography from '@/components/Typography'
 
-import { Section, Wrapper, Infos, Action, BgGradient, Jobs } from './style'
+import { Section, Wrapper, Infos, Action, Jobs } from './style'
+import Sepatator from '@/ui/Structure/Separator'
 
 export default function Spotlight() {
   const bg = useRef<HTMLDivElement>(null)
 
   return (
-    <Section>
-      <BgGradient ref={bg} />
-      <Container size="lg">
+    <Section ref={bg}>
+      <Sepatator position="top" color="bg" climb />
+      <Container size="md">
         <Wrapper>
           <Infos>
             <Typography as="h2">
@@ -56,12 +57,19 @@ export default function Spotlight() {
             <Desktop>
               <Image src="/img/desktop.png" alt="Studio V" fill={true} />
             </Desktop>
-            <Phone css={{ position: 'absolute', left: '-10%', bottom: '-10%' }}>
+            <Phone
+              css={{
+                position: 'absolute',
+                left: 'calc(-$16)',
+                bottom: 'calc(-$16)'
+              }}
+            >
               <Image src="/img/phone.png" alt="Studio V" fill={true} />
             </Phone>
           </Jobs>
         </Wrapper>
       </Container>
+      <Sepatator position="bottom" color="bg" climb />
     </Section>
   )
 }

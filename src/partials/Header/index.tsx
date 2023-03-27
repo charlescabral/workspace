@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <HeaderMain>
-      <Container size="lg">
+      <Container size="md">
         <HeaderContent>
           <Brand />
           <Link href={'/blog'}>Blog</Link>

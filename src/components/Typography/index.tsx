@@ -4,12 +4,44 @@ import { TypographyProps } from './type'
 
 export default function Typography({
   children,
+  classname,
   text,
   as,
-  css
+  css,
+  color,
+  size
 }: TypographyProps) {
-  const Element = styled(as, { ...css })
+  const Typo = styled(as, {
+    ...css,
+    variants: {
+      color: {
+        primary: {
+          color: '$primary'
+        }
+      },
+      size: {
+        xs: {}
+      },
+      type: {
+        p: {},
+        h1: {}
+      }
+    },
+    compoundVariants: [
+      {
+        type: 'p',
+        size: 'xs',
+        css: {
+          fontSize: '$xs'
+        }
+      }
+    ]
+  })
   const ref = useRef<HTMLElement>(null)
 
-  return <Element ref={ref}>{children ? children : text}</Element>
+  return (
+    <Typo className={classname} ref={ref} color={color} size={size} type={as}>
+      {children ? children : text}
+    </Typo>
+  )
 }

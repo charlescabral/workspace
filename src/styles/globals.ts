@@ -25,7 +25,6 @@ export const injectGlobalStyles = globalCss({
   },
   body: {
     display: 'grid',
-    gridGap: '.5rem',
     placeItems: 'center',
     margin: 0,
     padding: 0,
@@ -34,7 +33,7 @@ export const injectGlobalStyles = globalCss({
     fontFamily: '$sans',
     fontSize: '$base',
     fontWeight: '$light',
-
+    // Pre
     '--bg': '#ffffff',
     '--header': 'red',
     '--textNormal': '#222',
@@ -117,15 +116,21 @@ export const injectGlobalStyles = globalCss({
       userSelect: '$gray5'
     }
   },
+
   p: {
     lineHeight: '$2xl'
   },
+
   h1: {},
   h2: {
     fontSize: '$7xl',
-    fontWeight: '$extrabold'
+    lineHeight: '$7xl',
+    fontWeight: '$extrabold',
+    '@lg': {
+      fontSize: '$8xl'
+    }
   },
-  h3: { fontSize: '$4xl', marginBottom: '$18', fontWeight: '$thin' },
+  h3: { fontSize: '$4xl', marginBottom: '$14', fontWeight: '$thin' },
   h4: { fontSize: '$3xl' },
   h5: { fontSize: '$2xl' },
   h6: { fontSize: '$xl' },
@@ -162,7 +167,8 @@ export const injectGlobalStyles = globalCss({
   hr: {
     my: '$10',
     border: 'none',
-    height: '$1',
+    height: '$2',
+    borderRadius: '$xs',
     backgroundColor: '$gray4',
     transform: 'rotateZ(-2deg)'
   }

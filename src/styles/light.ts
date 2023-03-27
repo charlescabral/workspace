@@ -36,6 +36,7 @@ export const light = {
     bgSwitcher: '$black4',
     colorSwitcher: '$white12',
     bgSite: '$white12',
+    bgFooter: '$gray12',
     backgroundAlpha: 'rgba(255, 255, 255, 0.8)',
     foreground: '$gray4',
     backgroundContrast: '$white1',
@@ -86,6 +87,12 @@ export const light = {
       0 2px 2px rgba(0, 0, 0, 0.12),
       0 4px 5px rgba(0, 0, 0, 0.12),
       0 10px 28px 6px rgba(0, 0, 0, 0.05)
+    `,
+    hirer: `
+      0 0 0 0.4rem $white9,
+      0 0 0 1rem $white8,
+      0 0 0 1.6rem $white7,
+      0 0 0 2.2rem $white6
     `
   },
   dropShadows: {

@@ -1,21 +1,23 @@
 import { styled } from '@/styles'
 
 export const ProjectsMain = styled('section', {
-  minWidth: '100%'
+  minWidth: '100%',
+  paddingBottom: '$12'
 })
 
 export const ProjectsList = styled('div', {
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'space-around',
-  flexDirection: 'row',
-  mx: '-$16'
+  flexDirection: 'row'
+  // mx: '-$16'
 })
 
 export const ProjectItem = styled('div', {
   display: 'flex',
-  minHeight: '560px',
-  minWidth: 'calc($bp-lg / 4 - $14)'
+  minHeight: '$60',
+  marginBottom: '$10',
+  minWidth: 'calc($bp-md / 2 - $13)'
 })
 
 export const Project = styled('div', {

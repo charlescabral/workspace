@@ -1,9 +1,9 @@
 import { styled } from '@/styles'
+import { defaultTokens } from '@/styles/common'
 
 export const Wrapper = styled('div', {
   display: 'grid',
   align: 'start',
-  gridGap: '1rem',
   gridTemplateColumns: '1fr',
   gridTemplateAreas: `'header' 'content' 'footer'`,
   gridAutoRows: 'max-content',
@@ -14,24 +14,36 @@ export const Wrapper = styled('div', {
 })
 
 export const Container = styled('div', {
-  px: '$10',
+  padding: '$10',
   mx: 'auto',
+  width: '100%',
+  zIndex: '$1',
   variants: {
+    pdy0: {
+      true: {
+        py: '0'
+      }
+    },
+    pdx2: {
+      true: {
+        px: '$5'
+      }
+    },
     size: {
       xs: {
-        maxWidth: '650px'
+        maxWidth: defaultTokens.sizes.xs
       },
       sm: {
-        maxWidth: '960px'
+        maxWidth: defaultTokens.sizes.sm
       },
       md: {
-        maxWidth: '1280px'
+        maxWidth: defaultTokens.sizes.md
       },
       lg: {
-        maxWidth: '1400px'
+        maxWidth: defaultTokens.sizes.lg
       },
       xl: {
-        maxWidth: '1920px'
+        maxWidth: defaultTokens.sizes.xl
       }
     }
   }
@@ -46,3 +58,54 @@ export const Main = styled('main', {
   justifyContent: 'center',
   alignItems: 'center'
 })
+
+export const Row = styled('div', {
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignItems: 'flex-start',
+  placeContent: 'start',
+  justifyContent: 'space-between',
+
+  variants: {
+    hover: {
+      true: {
+        hover: '$gray3'
+      }
+    },
+    align: {
+      center: {
+        alignItems: 'center',
+        placeContent: 'center'
+      },
+      end: {
+        alignItems: 'flex-end',
+        placeContent: 'end'
+      }
+    },
+    direction: {
+      col: {
+        flexDirection: 'column'
+      },
+      row: {
+        flexDirection: 'row'
+      }
+    }
+  }
+})
+
+export const Col = styled('div', {})
+
+export const OverflowLimit = styled('div', {
+  overflow: 'hidden',
+  borderRadius: '$xs',
+  transition: '$default',
+  width: '100%',
+  height: '100%',
+  position: 'absolute',
+  transformStyle: 'preserve-3d',
+  left: 0,
+  bottom: 0,
+  boxSizing: 'unset'
+})
+
+export * from './Separator'

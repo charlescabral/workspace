@@ -10,5 +10,5 @@ export const white = {
   white9: 'hsla(0, 0%, 100%, 0.386)',
   white10: 'hsla(0, 0%, 100%, 0.446)',
   white11: 'hsla(0, 0%, 100%, 0.592)',
-  white12: 'hsla(0, 0%, 100%, 0.923)'
+  white12: 'hsla(0, 0%, 100%, 1)'
 }

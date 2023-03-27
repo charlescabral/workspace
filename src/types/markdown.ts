@@ -3,12 +3,29 @@ import { StoreDataProps } from '.'
 export type PartialImageProps = {
   desktop: string
   phone: string
+  card: string
 }
 
 export type PartialDataProps = {
-  title: string
+  title?: string
   url?: string
-  images?: PartialImageProps
+  image?: PartialImageProps
+  company?: string
+  color?: string
+  business?: string
+  brand?: string
+  entrance?: number
+  exit?: number
+  link?: string
+  projects?: string[]
+  type?: string
+  hirer?: string
+  client?: string
+  time?: string
+  design?: string
+  designLink?: string
+  role?: string
+  stack?: string[]
 }
 
 export interface MarkdownProps {
@@ -34,6 +51,7 @@ export interface DataMdProps {
 export type PageProps = {
   partials: PartialsProps[]
   projects: MarkdownProps[]
+  trajectory: MarkdownProps[]
   store: StoreDataProps
   id: string
 }

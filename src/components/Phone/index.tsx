@@ -1,9 +1,12 @@
 import { useCallback, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { Scene, Case, Screen, Glass } from './style'
-import { useEventListener, useIsomorphicLayoutEffect } from '@/hooks'
+import {
+  useEventListener,
+  useIsomorphicLayoutEffect,
+  useIntersectionObserver
+} from '@/hooks'
 import { Coord, PhoneProps } from './type'
-import { useIntersectionObserver } from '@/hooks'
+import { Scene, Case, Screen, Glass } from './style'
 
 const options = {
   perspective: 1000,
@@ -44,7 +47,7 @@ export default function Phone({ children, css }: PhoneProps) {
         const { x, y } = getAxis({ clientX, clientY, clientRect })
 
         gsap.to(phone.current, {
-          scale: 1.1,
+          scale: 1.05,
           rotateY: y,
           rotateX: x,
           ease: 'back.out',

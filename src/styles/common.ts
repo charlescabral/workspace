@@ -78,7 +78,7 @@ export const defaultTokens = {
     fit: 'fit-content',
     screen: '100vw',
     full: '100%',
-    'bp-xs': '650px',
+    'bp-xs': '696px',
     'bp-sm': '960px',
     'bp-md': '1280px',
     'bp-lg': '1400px',
@@ -158,7 +158,7 @@ export const defaultTokens = {
       'background 0.12s ease, transform 0.12s ease, color 0.12s ease, box-shadow 0.12s ease 0s'
   },
   sizes: {
-    xs: '650px',
+    xs: '638px',
     sm: '960px',
     md: '1280px',
     lg: '1400px',
@@ -246,6 +246,47 @@ export const defaultUtils = {
     WebkitTextFillColor: 'transparent',
     '&::selection': {
       WebkitTextFillColor: '$colors$text'
+    }
+  }),
+  hover: (value: Stitches.PropertyValue<'backgroundImage'>) => ({
+    position: 'relative',
+
+    '&::before': {
+      content: '',
+      transition: '$default',
+      transform: 'scale(0.9)',
+      opacity: 0,
+      backgroundColor: value,
+      borderRadius: '$xs',
+      position: 'absolute',
+      zIndex: 0,
+      left: 0,
+      top: 0,
+      width: '100%',
+      height: '100%'
+    },
+
+    '.overflowLimit': {
+      transform: 'rotateZ(-2deg) scale(0.9)',
+
+      '> *': {
+        transform: 'skewX(0deg)',
+        transformStyle: 'preserve-3d'
+      }
+    },
+
+    '&:hover': {
+      '&::before': {
+        opacity: 1,
+        transform: 'rotateZ(-2deg) skewX(-4deg) scale(1.1)'
+      },
+      '.overflowLimit': {
+        transform: 'rotateZ(-2deg) skewX(-4deg) scale(1.1)'
+      }
+    },
+
+    '*': {
+      zIndex: '$1'
     }
   })
 }
