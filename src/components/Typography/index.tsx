@@ -4,11 +4,13 @@ import { TypographyProps } from './type'
 
 export default function Typography({
   children,
-  classname,
+  className,
   text,
   as,
   css,
   color,
+  font,
+  weight,
   size
 }: TypographyProps) {
   const Typo = styled(as, {
@@ -25,6 +27,16 @@ export default function Typography({
       type: {
         p: {},
         h1: {}
+      },
+      font: {
+        code: {
+          fontFamily: '$mono'
+        }
+      },
+      weight: {
+        bold: {
+          fontWeight: '$bold'
+        }
       }
     },
     compoundVariants: [
@@ -37,10 +49,19 @@ export default function Typography({
       }
     ]
   })
+
   const ref = useRef<HTMLElement>(null)
 
   return (
-    <Typo className={classname} ref={ref} color={color} size={size} type={as}>
+    <Typo
+      className={className}
+      ref={ref}
+      color={color}
+      size={size}
+      type={as}
+      font={font}
+      weight={weight}
+    >
       {children ? children : text}
     </Typo>
   )

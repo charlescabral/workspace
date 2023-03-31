@@ -7,9 +7,9 @@ export type PartialImageProps = {
 }
 
 export type PartialDataProps = {
-  title?: string
+  title: string
   url?: string
-  image?: PartialImageProps
+  image: PartialImageProps
   company?: string
   color?: string
   business?: string

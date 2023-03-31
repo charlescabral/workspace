@@ -12,12 +12,30 @@ import Typography from '@/components/Typography'
 
 import { Section, Wrapper, Infos, Action, Jobs } from './style'
 import Sepatator from '@/ui/Structure/Separator'
+import Texture from '@/components/Texture'
+import Waves from '@/components/Waves'
 
 export default function Spotlight() {
   const bg = useRef<HTMLDivElement>(null)
 
   return (
     <Section ref={bg}>
+      <Texture />
+
+      <Waves
+        size={'100%'}
+        duration={22}
+        color="white"
+        css={{
+          opacity: 0.4,
+          mixBlendMode: 'overlay',
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          zIndex: 0
+        }}
+      />
       <Sepatator position="top" color="bg" climb />
       <Container size="md">
         <Wrapper>

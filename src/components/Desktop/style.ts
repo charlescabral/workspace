@@ -10,7 +10,8 @@ export const Browser = styled('div', {
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-evenly'
+  justifyContent: 'space-evenly',
+  backdropFilter: 'blur(1rem)'
 })
 
 export const Field = styled('div', {

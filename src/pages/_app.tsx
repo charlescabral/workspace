@@ -1,21 +1,25 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+// import { useLenis } from '@studio-freight/react-lenis'
 
 import { DefaultSeo } from 'next-seo'
 import SEO from '~/next-seo.config'
 
-import { theme, darkTheme } from '@/styles'
-import { ThemeProvider } from '@/contexts/theme'
 import { useIsomorphicLayoutEffect } from '@/hooks'
 import { reportWebVitals } from '@/lib'
-import { Layout } from '@/layouts'
-import Nprogress from '@/ui/Nprogress'
+import { ThemeProvider } from '@/contexts/theme'
 import { StoreProvider } from '@/contexts/store'
+import { Layout } from '@/layouts'
+import { theme, darkTheme } from '@/styles'
+import Nprogress from '@/ui/Nprogress'
 
 export default function App({ Component, pageProps }: AppProps) {
+  // const lenis = useLenis({})
   const { store } = pageProps
 
   useIsomorphicLayoutEffect(() => {
+    // lenis?.start()
+    window.history.scrollRestoration = 'manual'
     reportWebVitals
   }, [])
 

@@ -3,10 +3,12 @@ import {} from '.'
 
 export type TypographyProps = {
   children?: ReactNode
-  classname?: string
+  className?: string
   text?: string
   as: React.ElementType
   css?: CSS
   color?: string
+  font?: string
   size?: string
+  weight?: string
 }

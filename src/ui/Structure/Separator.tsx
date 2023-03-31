@@ -39,6 +39,11 @@ const SVG = styled('svg', {
         polygon: {
           fill: '$bgFooter'
         }
+      },
+      footerLast: {
+        polygon: {
+          fill: '$bgLastRow'
+        }
       }
     }
   },
@@ -48,14 +53,14 @@ const SVG = styled('svg', {
       position: 'top',
       negative: true,
       css: {
-        top: 'calc(-$$height)'
+        top: '-$$height'
       }
     },
     {
       position: 'bottom',
       negative: true,
       css: {
-        bottom: 'calc(-$$height)'
+        bottom: '-$$height'
       }
     }
   ]

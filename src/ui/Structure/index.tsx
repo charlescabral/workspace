@@ -69,7 +69,7 @@ export const Row = styled('div', {
   variants: {
     hover: {
       true: {
-        hover: '$gray3'
+        hover: '$gray2'
       }
     },
     align: {

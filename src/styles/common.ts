@@ -278,10 +278,10 @@ export const defaultUtils = {
     '&:hover': {
       '&::before': {
         opacity: 1,
-        transform: 'rotateZ(-2deg) skewX(-4deg) scale(1.1)'
+        transform: 'rotateZ(-2deg) skewX(-2deg) scale(1.1)'
       },
       '.overflowLimit': {
-        transform: 'rotateZ(-2deg) skewX(-4deg) scale(1.1)'
+        transform: 'rotateZ(-2deg) skewX(-2deg) scale(1.1)'
       }
     },
 

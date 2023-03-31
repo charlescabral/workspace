@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { gsap } from 'gsap'
-import { useEffect, useMemo, useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import { IconProps } from './type'
 import { useIsomorphicLayoutEffect } from '@/hooks'
 import { useTheme } from '@/contexts/theme'
@@ -28,7 +28,7 @@ export default function SwicthIcon({ size, colorMoon, colorSun }: IconProps) {
       .eventCallback('onReverseComplete', rotateSun)
   }, [])
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     timeline.reversed(theme === 'light')
   }, [theme])
 

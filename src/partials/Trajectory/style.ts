@@ -21,6 +21,7 @@ export const StepItem = styled(Row, {
 
   '.overflowLimit': {
     opacity: 0,
+
     '&::before': {
       position: 'absolute',
       top: 0,
@@ -29,7 +30,7 @@ export const StepItem = styled(Row, {
       height: '100%',
       content: '',
       opacity: 0.4,
-      maskImage: `linear-gradient(145deg, rgba(9,9,121,0) 50%, rgba(0,212,255,1) 100%)`
+      maskImage: `linear-gradient(145deg, rgba(0,0, 0,0) 50%, rgba(0,212,255,1) 100%)`
     }
   }
 })
@@ -38,7 +39,7 @@ export const FloatBrand = styled(Image, {
   position: 'absolute',
   zIndex: 0,
   right: 140,
-  bottom: -170,
+  bottom: -160,
   opacity: 1,
   borderRadius: '$rounded',
   boxShadow: '$hirer'

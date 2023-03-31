@@ -1,4 +1,5 @@
 import { useState } from 'react'
+// import { useRect } from '@studio-freight/hamo'
 import { getMdItem } from '@/lib'
 import { useIsomorphicLayoutEffect } from '@/hooks'
 import { PartialProps, MarkdownProps, PageProps } from '@/types'
@@ -14,9 +15,7 @@ export default function HomeTemplate({
   projects
 }: PageProps) {
   const [partial, setPartial] = useState<PartialProps>()
-
   const bio = getMdItem('bio', partials) as MarkdownProps
-  // const trajectory = getMdItem('trajectory', partials) as MarkdownProps
 
   useIsomorphicLayoutEffect(() => setPartial({ bio }), [bio])
 

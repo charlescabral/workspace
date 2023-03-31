@@ -37,6 +37,7 @@ export const light = {
     colorSwitcher: '$white12',
     bgSite: '$white12',
     bgFooter: '$gray12',
+    bgLastRow: '$black8',
     backgroundAlpha: 'rgba(255, 255, 255, 0.8)',
     foreground: '$gray4',
     backgroundContrast: '$white1',
@@ -46,9 +47,10 @@ export const light = {
     cursorActive: '$primary',
     glassPhone: '$white10',
     glassDesktop: '$white12',
-    glassDesktopLight: '$white8',
+    glassDesktopLight: '$white6',
     progressBar: '$primary',
-    spotlightTitle: '$white12'
+    spotlightTitle: '$white12',
+    texture: 'contrast(30%) brightness(50%)'
   },
   shadows: {
     ...purple,
@@ -89,17 +91,13 @@ export const light = {
       0 10px 28px 6px rgba(0, 0, 0, 0.05)
     `,
     hirer: `
-      0 0 0 0.4rem $white9,
+      0 0 0 0.5rem $white9,
       0 0 0 1rem $white8,
       0 0 0 1.6rem $white7,
       0 0 0 2.2rem $white6
+    `,
+    avatarBorder: `
+      0 0 0 0.5rem $black4
     `
-  },
-  dropShadows: {
-    xs: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.07)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.04))',
-    sm: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.04))',
-    md: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08)) drop-shadow(0 20px 8px rgba(0, 0, 0, 0.04))',
-    lg: 'drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15)) drop-shadow(0 12px 14px rgba(0, 0, 0, 0.1))',
-    xl: 'drop-shadow(0 25px 34px rgba(0, 0, 0, 0.35))'
   }
 }
