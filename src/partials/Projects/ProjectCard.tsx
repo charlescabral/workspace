@@ -81,12 +81,13 @@ export default function ProjectCard({
           />
         )}
         <Texture />
+
         <ProjectImg
           ref={image}
           alt={title}
           width={500}
-          height={320}
-          src={`/img/projects/${card}`}
+          height={300}
+          src={card ? `/img/projects/${card}` : `/img/placeholder.jpg`}
         />
         <Infos ref={infos}>
           <Typography as="h5">{title}</Typography>
