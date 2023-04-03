@@ -92,9 +92,6 @@ export const light = {
     `,
     hirer: `
       0 0 0 0.5rem $white9,
-      0 0 0 1rem $white8,
-      0 0 0 1.6rem $white7,
-      0 0 0 2.2rem $white6
     `,
     avatarBorder: `
       0 0 0 0.5rem $black4

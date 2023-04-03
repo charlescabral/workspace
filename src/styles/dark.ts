@@ -71,9 +71,6 @@ export const dark = {
     `,
     hirer: `
       0 0 0 0.5rem $black7,
-      0 0 0 1rem $black6,
-      0 0 0 1.6rem $black5,
-      0 0 0 2.2rem $black4
     `,
     avatarBorder: `
       0 0 0 0.5rem $white6

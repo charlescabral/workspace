@@ -44,7 +44,7 @@ export const IconsLicenseCCbySA = styled('span', {
   $$iconGap: '$$iconSize/2',
   display: 'inline-block',
   marginBottom: '$4',
-  backgroundImage: 'url(/img/cc-by.svg)',
+  backgroundImage: 'url(/img/icons/cc-by.svg)',
   width: 'calc(3* $$iconSize + $$iconGap)',
   height: '$$iconSize',
   float: 'left',
@@ -65,10 +65,10 @@ export const IconsLicenseCCbySA = styled('span', {
   },
   '&::before': {
     left: 'calc($$iconSize + $$iconGap/2)',
-    backgroundImage: 'url(/img/cc-nc.svg)'
+    backgroundImage: 'url(/img/icons/cc-nc.svg)'
   },
   '&::after': {
     left: 'calc(2 * $$iconSize + $$iconGap)',
-    backgroundImage: 'url(/img/cc-sa.svg)'
+    backgroundImage: 'url(/img/icons/cc-sa.svg)'
   }
 })

@@ -27,7 +27,7 @@ export default function Spotlight() {
         duration={22}
         color="white"
         css={{
-          opacity: 0.4,
+          opacity: 0.3,
           mixBlendMode: 'overlay',
           position: 'absolute',
           left: 0,

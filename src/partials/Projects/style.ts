@@ -65,6 +65,7 @@ export const Infos = styled('div', {
   zIndex: '$1',
   backgroundColor: '$cardBg',
   position: 'absolute',
+  width: 250,
   padding: '$10',
   margin: '$10',
   borderRadius: '$xs',

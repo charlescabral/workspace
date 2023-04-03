@@ -57,10 +57,9 @@ export default function StepRow({
               <Waves
                 size={170}
                 duration={10}
-                color="white"
+                color="rgba(255, 255, 255, 0.2)"
                 css={{
-                  opacity: 0.6,
-                  // mixBlendMode: 'overlay',
+                  opacity: 0.3,
                   position: 'absolute',
                   right: 0,
                   top: 0,
