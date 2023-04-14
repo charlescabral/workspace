@@ -2,6 +2,7 @@ import { StoreDataProps } from '.'
 
 export type PartialImageProps = {
   desktop: string
+  deskEntire?: string
   phone: string
   card: string
 }
@@ -15,6 +16,8 @@ export type PartialDataProps = {
   business?: string
   brand?: string
   entrance?: number
+  index?: number
+  spotlight?: boolean
   exit?: number
   link?: string
   projects?: string[]

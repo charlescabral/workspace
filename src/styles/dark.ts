@@ -20,6 +20,7 @@ export const dark = {
     primary: '$purple7',
     secondary: '$purple9',
     brand: '$white12',
+    contrasty: '$white12',
     bgSite: '$gray2',
     bgFooter: '$black11',
     bgLastRow: '$black12',

@@ -25,9 +25,6 @@ export const {
     },
     shadows: {
       ...light.shadows
-    },
-    dropShadows: {
-      ...light.dropShadows
     }
   }
 })

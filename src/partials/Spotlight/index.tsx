@@ -1,41 +1,30 @@
 import { useRef } from 'react'
-import Image from 'next/image'
 
 import { Container } from '@/ui/Structure'
 import Button from '@/ui/Button'
+import Sepatator from '@/ui/Structure/Separator'
 import { ArrowLeft, Light } from '@/ui/Icons'
 
-import Desktop from '@/components/Desktop'
-import Phone from '@/components/Phone'
 import AnimateSplitText from '@/components/AnimateSplitText'
-import Typography from '@/components/Typography'
-
-import { Section, Wrapper, Infos, Action, Jobs } from './style'
-import Sepatator from '@/ui/Structure/Separator'
+import Typography from '@/ui/Typography'
 import Texture from '@/components/Texture'
-import Waves from '@/components/Waves'
 
-export default function Spotlight() {
+import { PartialsProps } from '@/types'
+import { partialValue } from '@/lib'
+import { Section, Wrapper, Infos, Action } from './style'
+import Devices from './Devices'
+
+export default function Spotlight({ projects }: PartialsProps) {
   const bg = useRef<HTMLDivElement>(null)
+  const jobs = projects.filter((project) => {
+    const { data } = partialValue(project)
+    return data.spotlight
+  })
 
   return (
     <Section ref={bg}>
       <Texture />
 
-      <Waves
-        size={'100%'}
-        duration={22}
-        color="white"
-        css={{
-          opacity: 0.3,
-          mixBlendMode: 'overlay',
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          top: 0,
-          zIndex: 0
-        }}
-      />
       <Sepatator position="top" color="bg" climb />
       <Container size="md">
         <Wrapper>
@@ -45,7 +34,7 @@ export default function Spotlight() {
               <AnimateSplitText text="para internet" />
             </Typography>
             <Action>
-              <Button href={''} color="primary" rounded size="sm" icon="r">
+              <Button color="primary" rounded size="sm" icon="r">
                 Meu Currículo
                 <ArrowLeft
                   size={10}
@@ -53,14 +42,7 @@ export default function Spotlight() {
                   inlineStyle={{ marginTop: '$1' }}
                 />
               </Button>
-              <Button
-                href={''}
-                color="primary"
-                rounded
-                size="sm"
-                flat
-                icon="lr"
-              >
+              <Button color="primary" rounded size="sm" flat icon="lr">
                 <Light fill={`#235C0D`} size={32} classname="icon" />
                 Vamos Trocar Idéias?
                 <ArrowLeft
@@ -71,20 +53,8 @@ export default function Spotlight() {
               </Button>
             </Action>
           </Infos>
-          <Jobs>
-            <Desktop>
-              <Image src="/img/desktop.png" alt="Studio V" fill={true} />
-            </Desktop>
-            <Phone
-              css={{
-                position: 'absolute',
-                left: 'calc(-$16)',
-                bottom: 'calc(-$16)'
-              }}
-            >
-              <Image src="/img/phone.png" alt="Studio V" fill={true} />
-            </Phone>
-          </Jobs>
+
+          <Devices jobs={jobs} />
         </Wrapper>
       </Container>
       <Sepatator position="bottom" color="bg" climb />

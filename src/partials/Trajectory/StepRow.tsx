@@ -1,12 +1,11 @@
 // import Link from 'next/link'
-import Typography from '@/components/Typography'
+import Typography from '@/ui/Typography'
 import { MarkdownProps } from '@/types'
-import { Col, OverflowLimit } from '@/ui/Structure'
+import { Col, OverflowLimit, Row } from '@/ui/Structure'
 import { useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { FloatBrand, StepItem } from './style'
 import Texture from '@/components/Texture'
-import Waves from '@/components/Waves'
 
 export default function StepRow({
   data: { company, business, projects, entrance, exit, brand, color }
@@ -42,6 +41,7 @@ export default function StepRow({
         ref={step}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
+        direction="row"
         css={{
           '&:hover .company': {
             color: color
@@ -53,21 +53,7 @@ export default function StepRow({
             className="overflowLimit"
             css={{ '&::before': { backgroundColor: color } }}
           >
-            {isHover && (
-              <Waves
-                size={170}
-                duration={10}
-                color="rgba(255, 255, 255, 0.2)"
-                css={{
-                  opacity: 0.3,
-                  position: 'absolute',
-                  right: 0,
-                  top: 0,
-                  zIndex: '0'
-                }}
-              />
-            )}
-            <Texture />
+            {isHover && <Texture />}
             <FloatBrand
               className="brand"
               ref={brandRef}
@@ -80,15 +66,17 @@ export default function StepRow({
           </OverflowLimit>
         )}
         <Col>
-          <Typography as="p" color="primary" size="xs">
-            {business}
-          </Typography>
-          <Typography as="h4" className="company">
-            {company}
-          </Typography>
-          <Typography as="p" size="xs">
-            {projects?.map((project) => `${project}`).join(' / ')}
-          </Typography>
+          <Row direction="col">
+            <Typography as="p" color="primary" size="xs">
+              {business}
+            </Typography>
+            <Typography as="h4" className="company">
+              {company}
+            </Typography>
+            <Typography as="p" size="xs">
+              {projects?.map((project) => `${project}`).join(' / ')}
+            </Typography>
+          </Row>
         </Col>
         <Col className="time">
           <Typography as="p" size="xs">

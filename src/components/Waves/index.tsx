@@ -1,12 +1,7 @@
-// <!--?xml version="1.0" standalone="no"?-->
-//               <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1">
-
-//               </svg>
-
-// import { SvgProps } from './type'
 import { useMemo, useRef } from 'react'
 import { gsap } from 'gsap'
 import { styled } from '@/styles'
+import { fadeIn } from '@/styles/utils'
 import { useIsomorphicLayoutEffect } from '@/hooks'
 import { CSS } from '@stitches/react'
 
@@ -32,7 +27,9 @@ export default function Waves({ duration, color, size, css }: WavesProps) {
     scale: 4,
     right: '0',
     opacity: 0.9,
-    bottom: '-140%'
+    bottom: '-140%',
+    transition: '$default',
+    animation: `${fadeIn} 300ms`
   })
 
   const Path = styled('path', {

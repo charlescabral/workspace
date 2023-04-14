@@ -6,9 +6,16 @@ export type StoreProps = {
   link: string
 }
 
+export type ModalProps = {
+  isOpen?: boolean
+  content?: string
+  key?: string
+}
+
 export type StoreDataProps = {
   social?: StoreProps[]
   sponsors?: StoreProps[]
+  modal?: ModalProps
 }
 
 export interface StoreApiProps {

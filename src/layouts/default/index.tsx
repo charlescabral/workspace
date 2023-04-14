@@ -8,6 +8,8 @@ import TransitionLayout from '@/contexts/animation/layout'
 import { Main, Wrapper } from '@/ui/Structure'
 import Header from '@/partials/Header'
 import Footer from '@/partials/Footer'
+
+// import Modal, { ModalRoot } from '@/partials/Projects/Modal'
 // import { Cursor } from '@/ui/Cursor'
 
 export default function Default({ children }: PropsWithChildren) {
@@ -33,8 +35,8 @@ export default function Default({ children }: PropsWithChildren) {
         <Wrapper>
           <Header />
           <Main>{children}</Main>
-          <Footer />
           {/* <Cursor /> */}
+          <Footer />
         </Wrapper>
         {/* </Lenis> */}
       </TransitionLayout>

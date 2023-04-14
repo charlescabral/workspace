@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext, useMemo } from 'react'
 import gsap from 'gsap'
 import { TransitionProviderProps, TransitionContextProps } from './type'
 
@@ -10,13 +10,16 @@ const TransitionContext = createContext<TransitionContextProps>({
 })
 
 const TransitionProvider = ({ children }: TransitionProviderProps) => {
-  const [timer, setTimer] = useState<number>(0)
-  const [timeline, setTimeline] = useState<GSAPTimeline>(() =>
-    gsap.timeline({
-      paused: true,
-      onUpdate: () => setTimer(timeline.progress())
-    })
+  const tl: gsap.core.Timeline = useMemo(
+    () =>
+      gsap.timeline({
+        paused: true,
+        onUpdate: () => setTimer(tl.progress())
+      }),
+    []
   )
+  const [timer, setTimer] = useState<number>(0)
+  const [timeline, setTimeline] = useState<GSAPTimeline>(tl)
 
   return (
     <TransitionContext.Provider

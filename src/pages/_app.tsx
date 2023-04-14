@@ -12,6 +12,7 @@ import { StoreProvider } from '@/contexts/store'
 import { Layout } from '@/layouts'
 import { theme, darkTheme } from '@/styles'
 import Nprogress from '@/ui/Nprogress'
+import { RealViewport } from '@/components/RealViewport'
 
 export default function App({ Component, pageProps }: AppProps) {
   // const lenis = useLenis({})
@@ -43,6 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </Head>
         <DefaultSeo {...SEO} />
         <Nprogress />
+        <RealViewport />
         <Layout>
           <Component {...pageProps} />
         </Layout>

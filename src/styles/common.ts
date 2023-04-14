@@ -158,6 +158,7 @@ export const defaultTokens = {
       'background 0.12s ease, transform 0.12s ease, color 0.12s ease, box-shadow 0.12s ease 0s'
   },
   sizes: {
+    project: '520px',
     xs: '638px',
     sm: '960px',
     md: '1280px',
@@ -313,7 +314,7 @@ export const defaultThemeMap = {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  prefix: 'frontlab',
+  prefix: 'charles',
   theme: defaultTokens,
   media: defaultMedia,
   utils: defaultUtils,

@@ -35,6 +35,7 @@ export const Screen = styled('div', {
 
 export const Glass = styled('div', {
   position: 'absolute',
+  pointerEvents: 'none',
   width: '100%',
   height: '100%',
   transform: 'translateZ(0) 100ms',

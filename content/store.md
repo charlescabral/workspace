@@ -1,4 +1,8 @@
 ---
+modal: {
+  isOpen: false,
+  content:  'nulo'
+}
 social: [
   {
     name: 'Email',

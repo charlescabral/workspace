@@ -1,6 +1,6 @@
 export interface UseStoreProps {
   storeContext?: StoreDataProps
-  setStore?: (store: StoreDataProps) => void
+  setStore: (store: StoreDataProps) => void
 }
 
 export interface StoreProviderProps {

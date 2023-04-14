@@ -25,6 +25,7 @@ export const light = {
     warning: '$orange5',
     error: '$red5',
     neutral: '$gray6',
+    contrasty: '$gray11',
     accent: '$$gray02',
     text: '$gray11',
     textLight: '$gray8',

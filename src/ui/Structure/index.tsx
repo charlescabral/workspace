@@ -16,7 +16,7 @@ export const Wrapper = styled('div', {
 export const Container = styled('div', {
   padding: '$10',
   mx: 'auto',
-  width: '100%',
+  maxWidth: '100%',
   zIndex: '$1',
   variants: {
     pdy0: {
@@ -73,6 +73,10 @@ export const Row = styled('div', {
       }
     },
     align: {
+      middle: {
+        alignItems: 'center',
+        placeContent: 'space-between'
+      },
       center: {
         alignItems: 'center',
         placeContent: 'center'
@@ -93,7 +97,20 @@ export const Row = styled('div', {
   }
 })
 
-export const Col = styled('div', {})
+export const Col = styled('div', {
+  variants: {
+    display: {
+      b: {
+        display: 'block'
+      },
+      f: { display: 'flex' }
+    }
+  },
+
+  defaultVariants: {
+    display: 'f'
+  }
+})
 
 export const OverflowLimit = styled('div', {
   overflow: 'hidden',

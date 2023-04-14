@@ -1,6 +1,6 @@
 import { MarkdownProps } from '@/types'
 import { Container, Row } from '@/ui/Structure'
-import Presentation from '@/partials/Presentation'
+// import Presentation from '@/partials/Presentation'
 import { Article, Avatar } from './style'
 
 export default function Bio({ html }: MarkdownProps) {
@@ -9,7 +9,6 @@ export default function Bio({ html }: MarkdownProps) {
       <Article>
         <Container size="xs">
           <Row>
-            <Presentation />
             <div dangerouslySetInnerHTML={{ __html: html }} />
             <Avatar
               width="100"

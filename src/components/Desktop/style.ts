@@ -1,8 +1,9 @@
 import { styled } from '@/styles'
+import Button from '@/ui/Button'
 
 export const Browser = styled('div', {
   padding: '$10',
-  minWidth: '800px',
+  minWidth: '880px',
   height: '540px',
   background: 'linear-gradient(180deg, $glassDesktopLight, $glassDesktop)',
   boxShadow: '$lg',
@@ -18,7 +19,6 @@ export const Field = styled('div', {
   display: 'flex',
   alignItems: 'center',
   backgroundColor: '$white12',
-  px: '$6',
   lineHeight: '$4xl',
   color: '$gray8',
   fontSize: '$sm',
@@ -26,9 +26,11 @@ export const Field = styled('div', {
   marginBottom: '$6',
   borderRadius: '$xs',
   boxShadow: '$xs',
+  overflow: 'hidden',
 
   '.icon': {
-    marginRight: '$4'
+    marginRight: '$6',
+    marginTop: '$1'
   }
 })
 export const Screen = styled('div', {
@@ -38,4 +40,12 @@ export const Screen = styled('div', {
   minHeight: '90%',
   borderRadius: '$xs',
   boxShadow: '$xs'
+})
+
+export const Controls = styled('div', {
+  display: 'flex'
+})
+export const Action = styled(Button, {
+  height: '$13',
+  width: '$13'
 })

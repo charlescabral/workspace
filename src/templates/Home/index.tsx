@@ -16,17 +16,14 @@ export default function HomeTemplate({
 }: PageProps) {
   const [partial, setPartial] = useState<PartialProps>()
   const bio = getMdItem('bio', partials) as MarkdownProps
-
   useIsomorphicLayoutEffect(() => setPartial({ bio }), [bio])
 
-  return partial ? (
+  return (
     <>
-      <Spotlight />
-      <Bio {...partial.bio} />
+      <Spotlight projects={projects} />
+      {partial && <Bio {...partial.bio} />}
       <Trajectory trajectory={trajectory} />
       <Projects projects={projects} />
     </>
-  ) : (
-    <></>
   )
 }

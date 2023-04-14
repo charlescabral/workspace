@@ -15,8 +15,13 @@ export default function useWindowSize() {
 
   const handleSize = () => {
     const { innerWidth, innerHeight } = window
+    const {
+      documentElement: { clientWidth }
+    } = document
+    const scrollbar = clientWidth - innerWidth
+
     setWindowSize({
-      width: innerWidth,
+      width: innerWidth + scrollbar,
       height: innerHeight
     })
   }

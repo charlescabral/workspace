@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useStore } from '@/contexts/store'
 import { Container, Row } from '@/ui/Structure'
 import Sepatator from '@/ui/Structure/Separator'
-import Typography from '@/components/Typography'
+import Typography from '@/ui/Typography'
 import IconLink from './IconLink'
 import { StoreProps } from '@/types'
 import {
@@ -27,7 +27,7 @@ export default function Footer() {
       <Sepatator position="top" color="footer" negative reverse climb />
       <Container size="md">
         <FirstRow>
-          <Sponsors>
+          <Sponsors display="b">
             <Row>
               <Typography as="p" size="xs" className="subtitle" weight="bold">
                 Orgulhosamente feito com
@@ -39,7 +39,7 @@ export default function Footer() {
               ))}
             </Row>
           </Sponsors>
-          <Social>
+          <Social display="b">
             <Row>
               <Typography as="p" size="xs" className="subtitle" weight="bold">
                 Contato
