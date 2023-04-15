@@ -4,7 +4,7 @@ import { gsap } from 'gsap'
 import { MarkdownProps, PartialsProps } from '@/types'
 import { Container } from '@/ui/Structure'
 import { getMdData } from '@/lib'
-import { useIsomorphicLayoutEffect, useWindowSize } from '@/hooks'
+import { useWindowSize } from '@/hooks'
 
 import Typography from '@/ui/Typography'
 import { Slider } from '@/components/Slider'
@@ -17,41 +17,28 @@ export default function Projects({ projects }: PartialsProps) {
   const { width } = useWindowSize()
   const timeline = useMemo(() => gsap.timeline(), [])
   const arrowLeft = useRef<HTMLButtonElement>(null)
-  // const arrowLeftT = useMemo()
 
   const arrowRight = useRef<HTMLButtonElement>(null)
 
-  // const arrowAnimation = () => {
-  //   timeline
-  //     .clear()
-  //     .to(arrowLeft.current, {
-  //       left: 44,
-  //       duration: 0.25
-  //     })
-  //     .to(
-  //       arrowRight.current,
-  //       {
-  //         right: 44,
-  //         duration: 0.25
-  //       },
-  //       '-=0.25'
-  //     )
-  // }
-
-  useIsomorphicLayoutEffect(() => {
-    timeline.to(arrowLeft.current, {
-      duration: 0.5,
-      left: 44,
-      paused: true
-    })
-  }, [arrowLeft.current])
+  const time = 0.2
 
   const enterHandler = () => {
-    // timeline.clear().play()
+    timeline
+      .to(arrowLeft.current, {
+        left: 44,
+        duration: time
+      })
+      .to(
+        arrowRight.current,
+        {
+          right: 44,
+          duration: time
+        },
+        `-=${time}`
+      )
+      .play()
   }
-  const leaveHandler = () => {
-    // timeline.clear().reverse()
-  }
+  const leaveHandler = () => timeline.reverse(0.5)
 
   return (
     <ProjectsMain>

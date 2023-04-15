@@ -134,25 +134,28 @@ export const ActionBar = styled(Row, {
   minWidth: '288px',
   padding: '$10 $10',
   pointerEvents: 'none',
+  transform: 'translateZ(0)',
 
   '&::before': {
     content: '',
     size: '110%',
     background: 'transparent',
     backgroundImage: 'linear-gradient(360deg,rgba(0,0,0,.50),transparent)',
-    backdropFilter: 'blur(0.75rem)',
+    backdropFilter: 'blur(0.65rem)',
     position: 'absolute',
     left: -4,
     bottom: -4
   }
 })
 
-export const Tools = styled(Col, {})
+export const Tools = styled(Col, {
+  transform: 'scale(0.9)'
+})
 
 export const Sample = styled(Row, {
   overflow: 'hidden',
   width: '58%',
-  maxHeight: '286px',
+  maxHeight: '288px',
   position: 'relative',
   zIndex: '$1'
 })

@@ -24,6 +24,7 @@ import {
 import Button from '@/ui/Button'
 import Preview from './Preview'
 import IconTool from './IconTool'
+import { LinkIcon } from '@/ui/Icons'
 
 export default function Card(props: MarkdownProps) {
   const {
@@ -108,7 +109,7 @@ export default function Card(props: MarkdownProps) {
 
   const actived = () => {
     timeline
-      .to(bg.current, { scale: 1.2, duration: timeIn })
+      .to(bg.current, { scale: 1.1, duration: timeIn })
       .to(
         imageCard.current,
         {
@@ -151,56 +152,51 @@ export default function Card(props: MarkdownProps) {
         },
         `-=${timeIn}`
       )
-      .to(sample.current, {
-        right: 0,
-        duration: timeIn,
-        ease: 'power2.in'
-      })
+      .to(
+        sample.current,
+        {
+          right: 0,
+          duration: timeIn,
+          ease: 'power2.in'
+        },
+        `-=${timeIn / 2}`
+      )
       .to(action.current, {
         bottom: -1,
-        ease: 'linear.in',
-        duration: timeIn
+        ease: 'circ.out',
+        duration: timeIn / 2
       })
   }
 
   const hovered = () => {
-    const teste =
-      !!project.current &&
-      !!bg.current &&
-      !!sample.current &&
-      !!details.current &&
-      !!action.current &&
-      !!imageCard.current &&
-      !!infos.current
-    teste &&
-      timeline
-        .to(bg.current, {
-          backgroundColor: color,
-          scale: 1.05,
-          ease: 'power2.in',
-          duration: timeIn
-        })
-        .to(
-          imageCard.current,
-          {
-            filter: 'grayscale(0)',
-            opacity: 1,
-            right: -10,
-            duration: timeIn,
-            ease: 'back.out'
-          },
-          `-=${timeIn}`
-        )
-        .to(
-          infos.current,
-          {
-            bottom: 20,
-            left: 20,
-            duration: timeIn,
-            ease: 'back.out'
-          },
-          `-=${timeIn}`
-        )
+    timeline
+      .to(bg.current, {
+        backgroundColor: color,
+        scale: 1.05,
+        ease: 'power2.in',
+        duration: timeIn
+      })
+      .to(
+        imageCard.current,
+        {
+          filter: 'grayscale(0)',
+          opacity: 1,
+          right: -10,
+          duration: timeIn,
+          ease: 'back.out'
+        },
+        `-=${timeIn}`
+      )
+      .to(
+        infos.current,
+        {
+          bottom: 20,
+          left: 20,
+          duration: timeIn,
+          ease: 'back.out'
+        },
+        `-=${timeIn}`
+      )
   }
 
   const mouseEnter = () => {
@@ -310,11 +306,15 @@ export default function Card(props: MarkdownProps) {
                   size="xs"
                   color="white"
                   weight="b"
-                  rounded
+                  icon="l"
                   bordered
+                  rounded
+                  flat
                   href={link}
+                  css={{ transform: 'scale(1)' }}
                 >
-                  Ver Site
+                  <LinkIcon size={24} />
+                  SITE
                 </Button>
                 <Tools>
                   {stack &&

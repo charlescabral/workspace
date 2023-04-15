@@ -20,7 +20,7 @@ export const light = {
     ...orange,
     ...gray,
     primary: '$green10',
-    secondary: '$green12',
+    secondary: '$orange10',
     success: '$green5',
     warning: '$orange5',
     error: '$red5',

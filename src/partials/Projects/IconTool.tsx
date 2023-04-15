@@ -19,7 +19,6 @@ const WrapperLink = styled(Link, {
   },
 
   '&:hover': {
-    transform: 'scale(1.2)',
     opacity: 0.8
   }
 })

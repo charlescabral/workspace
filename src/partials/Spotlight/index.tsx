@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Container } from '@/ui/Structure'
 import Button from '@/ui/Button'
 import Sepatator from '@/ui/Structure/Separator'
-import { ArrowLeft, Light } from '@/ui/Icons'
+import { Left, Light } from '@/ui/Icons'
 
 import AnimateSplitText from '@/components/AnimateSplitText'
 import Typography from '@/ui/Typography'
@@ -36,7 +36,7 @@ export default function Spotlight({ projects }: PartialsProps) {
             <Action>
               <Button color="primary" rounded size="sm" icon="r">
                 Meu Currículo
-                <ArrowLeft
+                <Left
                   size={10}
                   classname="icon"
                   inlineStyle={{ marginTop: '$1' }}
@@ -45,7 +45,7 @@ export default function Spotlight({ projects }: PartialsProps) {
               <Button color="primary" rounded size="sm" flat icon="lr">
                 <Light fill={`#235C0D`} size={32} classname="icon" />
                 Vamos Trocar Idéias?
-                <ArrowLeft
+                <Left
                   size={10}
                   classname="icon"
                   inlineStyle={{ marginTop: '$1' }}

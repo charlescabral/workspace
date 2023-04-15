@@ -32,9 +32,11 @@ const Button = forwardRef<HTMLButtonElement | LinkProps, ButtonProps>(
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
+      textDecoration: 'none',
       py: '$4',
       fontWeight: '$medium',
       pointerEvents: 'auto',
+      transform: 'translateZ(0)',
 
       '&:hover': {
         opacity: 0.9
@@ -45,6 +47,7 @@ const Button = forwardRef<HTMLButtonElement | LinkProps, ButtonProps>(
       },
 
       '& *': {
+        textDecoration: 'none',
         transformStyle: 'preserve-3d'
       },
 
@@ -93,7 +96,7 @@ const Button = forwardRef<HTMLButtonElement | LinkProps, ButtonProps>(
         size: {
           xs: {
             letterSpacing: '0.05rem',
-            lineHeight: '1.2rem',
+            lineHeight: '1rem',
             fontSize: '$xs',
             px: '$8'
           },
@@ -192,20 +195,18 @@ const Button = forwardRef<HTMLButtonElement | LinkProps, ButtonProps>(
           }
         },
         {
-          bordered: true,
+          flat: true,
           color: 'white',
           css: {
-            borderColor: '$white12',
+            borderColor: 'transparent',
+            borderWidth: '1px',
             color: '$white12',
             '.fill': {
               fill: '$white12'
             },
             '&:hover': {
-              backgroundColor: '$white12',
-              color: '$primary',
-              '.fill': {
-                fill: '$primary'
-              }
+              borderColor: '$white12',
+              opacity: 0.8
             }
           }
         },
