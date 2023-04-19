@@ -63,7 +63,7 @@ export default function Devices({ jobs }: PartialsProps) {
                 <Image
                   key={i}
                   src={`/img/projects/${desktop}`}
-                  alt={title}
+                  alt={title ? title : ''}
                   fill={true}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
@@ -94,7 +94,7 @@ export default function Devices({ jobs }: PartialsProps) {
                 <Image
                   key={i}
                   src={`/img/projects/${phone}`}
-                  alt={title}
+                  alt={title ? title : ''}
                   fill={true}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />

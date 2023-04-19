@@ -12,6 +12,8 @@ export type PartialDataProps = {
   url?: string
   image: PartialImageProps
   company?: string
+  isOnline?: boolean
+  isIntra?: boolean
   color?: string
   business?: string
   brand?: string
@@ -19,7 +21,7 @@ export type PartialDataProps = {
   index?: number
   spotlight?: boolean
   exit?: number
-  link?: string
+  link: string
   projects?: string[]
   type?: string
   hirer?: string

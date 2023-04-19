@@ -24,11 +24,22 @@ import {
 import Button from '@/ui/Button'
 import Preview from './Preview'
 import IconTool from './IconTool'
-import { LinkIcon } from '@/ui/Icons'
+import { LinkIcon, EyeIcon } from '@/ui/Icons'
 
 export default function Card(props: MarkdownProps) {
   const {
-    data: { title, type, time, role, stack, color, link, image },
+    data: {
+      isOnline,
+      isIntra,
+      title,
+      type,
+      time,
+      role,
+      stack,
+      color,
+      link,
+      image
+    },
     html
   } = props
   const [isActive, setDetail] = useState<boolean>(false)
@@ -59,17 +70,18 @@ export default function Card(props: MarkdownProps) {
         {
           opacity: 0,
           visibility: 'hidden',
-          duration: timeOut
+          duration: timeOut / 4
         },
         `-=${timeOut}`
       )
       .to(
         sample.current,
         {
-          right: -400,
+          visibility: 'visible',
+          right: -300,
           duration: timeOut
         },
-        `-=${timeOut}`
+        `-=${timeIn}`
       )
       .to(
         bg.current,
@@ -97,7 +109,7 @@ export default function Card(props: MarkdownProps) {
         infos.current,
         {
           width: 290,
-          height: 150,
+          height: 158,
           bottom: 10,
           left: 10,
           duration: timeOut,
@@ -114,10 +126,9 @@ export default function Card(props: MarkdownProps) {
         imageCard.current,
         {
           filter: 'grayscale(0)',
-          opacity: 1,
           bottom: -100,
           duration: timeIn,
-          ease: 'back.out'
+          ease: 'back.in'
         },
         `-=${timeIn}`
       )
@@ -156,6 +167,7 @@ export default function Card(props: MarkdownProps) {
         sample.current,
         {
           right: 0,
+          visibility: 'visible',
           duration: timeIn,
           ease: 'power2.in'
         },
@@ -174,7 +186,7 @@ export default function Card(props: MarkdownProps) {
         backgroundColor: color,
         scale: 1.05,
         ease: 'power2.in',
-        duration: timeIn
+        duration: timeIn / 2
       })
       .to(
         imageCard.current,
@@ -185,7 +197,7 @@ export default function Card(props: MarkdownProps) {
           duration: timeIn,
           ease: 'back.out'
         },
-        `-=${timeIn}`
+        `-=${timeIn / 2}`
       )
       .to(
         infos.current,
@@ -219,34 +231,9 @@ export default function Card(props: MarkdownProps) {
       return storeContext
     })
 
-  // const refsReady = (refs: any[]) => {
-  //   refs.map((ref) => {
-  //     // console.log(ref)
-  //   })
-  // }
-
   useIsomorphicLayoutEffect(() => {
-    // const teste =
-    //   !!project.current &&
-    //   !!bg.current &&
-    //   !!sample.current &&
-    //   !!details.current &&
-    //   !!action.current &&
-    //   !!imageCard.current &&
-    //   !!infos.current
-    // refsReady([project, bg, preview, sample, details, action, imageCard, infos])
     isActive ? actived() : inactived()
-  }, [
-    isActive,
-    project,
-    bg,
-    preview,
-    sample,
-    details,
-    action,
-    imageCard,
-    infos
-  ])
+  }, [isActive])
 
   return (
     <ProjectItem ref={project}>
@@ -261,7 +248,7 @@ export default function Card(props: MarkdownProps) {
 
         <ProjectImg
           ref={imageCard}
-          alt={title}
+          alt={title ? title : ''}
           width={400}
           height={240}
           sizes="(max-width: 768px) 100vw,
@@ -274,20 +261,20 @@ export default function Card(props: MarkdownProps) {
         <Infos ref={infos} direction={isActive ? 'row' : 'col'}>
           <Col
             display={!isActive ? 'b' : 'f'}
-            css={{ overflow: 'hidden', minHeight: '100%' }}
+            css={{ overflow: 'hidden', minHeight: '100%', width: '100%' }}
           >
             <Details isOpen={isActive} direction="col">
               <ShortDetail direction="col">
                 <Typography as="h5" color="contrasty">
                   {title}
                 </Typography>
-                <Typography as="p" size="xs">
-                  {type}
-                </Typography>
-                <Typography as="p" size="xs">
+                <Typography as="p" size="xs" weight="bold" color="contrasty">
                   {role}
                 </Typography>
                 <Typography as="p" size="xs">
+                  {type}
+                </Typography>
+                <Typography as="p" size="xs" weight="bold" color="contrasty">
                   {time}
                 </Typography>
               </ShortDetail>
@@ -304,17 +291,18 @@ export default function Card(props: MarkdownProps) {
                 <Texture />
                 <Button
                   size="xs"
+                  isLink={!isIntra}
                   color="white"
                   weight="b"
                   icon="l"
+                  target="blank"
                   bordered
                   rounded
                   flat
                   href={link}
-                  css={{ transform: 'scale(1)' }}
                 >
-                  <LinkIcon size={24} />
-                  SITE
+                  {isIntra ? <EyeIcon size={24} /> : <LinkIcon size={24} />}
+                  {isIntra ? 'Intranet' : isOnline ? 'SITE' : 'Archive'}
                 </Button>
                 <Tools>
                   {stack &&

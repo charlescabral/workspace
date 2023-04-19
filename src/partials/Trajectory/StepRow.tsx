@@ -1,14 +1,14 @@
-// import Link from 'next/link'
-import Typography from '@/ui/Typography'
-import { MarkdownProps } from '@/types'
-import { Col, OverflowLimit, Row } from '@/ui/Structure'
 import { useRef, useState } from 'react'
+import Link from 'next/link'
 import { gsap } from 'gsap'
-import { FloatBrand, StepItem } from './style'
 import Texture from '@/components/Texture'
+import Typography from '@/ui/Typography'
+import { Col, OverflowLimit, Row } from '@/ui/Structure'
+import { MarkdownProps } from '@/types'
+import { FloatBrand, StepItem } from './style'
 
 export default function StepRow({
-  data: { company, business, projects, entrance, exit, brand, color }
+  data: { company, link, business, projects, entrance, exit, brand, color }
 }: MarkdownProps) {
   const [isHover, setHover] = useState<boolean>(false)
   const step = useRef<HTMLDivElement>(null)
@@ -67,19 +67,21 @@ export default function StepRow({
         )}
         <Col>
           <Row direction="col">
-            <Typography as="p" color="primary" size="xs">
+            <Typography as="p" color="primary" size="xs" weight="bold">
               {business}
             </Typography>
-            <Typography as="h4" className="company">
-              {company}
-            </Typography>
+            <Link href={link} target="blank">
+              <Typography as="h4" className="company">
+                {company}
+              </Typography>
+            </Link>
             <Typography as="p" size="xs">
               {projects?.map((project) => `${project}`).join(' / ')}
             </Typography>
           </Row>
         </Col>
         <Col className="time">
-          <Typography as="p" size="xs">
+          <Typography as="p" size="xs" weight="bold">
             {entrance} / {exit}
           </Typography>
         </Col>

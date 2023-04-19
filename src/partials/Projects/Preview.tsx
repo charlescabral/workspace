@@ -20,6 +20,7 @@ const Root = styled(ScrollArea.Root, {
 
 const Viewport = styled(ScrollArea.Viewport, {
   size: '100%',
+  paddingBottom: 60,
   borderRadius: 'inherit'
 })
 
@@ -31,7 +32,7 @@ const Scrollbar = styled(ScrollArea.Scrollbar, {
 
   '&[data-orientation="vertical"]': {
     width: '$9',
-    paddingBottom: '$24'
+    paddingBottom: 72
   }
 })
 const Thumb = styled(ScrollArea.Thumb, {
@@ -63,7 +64,7 @@ const Preview = forwardRef<HTMLDivElement, PartialImageProps>(function MyInput(
       <Viewport className="ScrollAreaViewport">
         {deskEntire && (
           <Project
-            alt={'title'}
+            alt="Project"
             width={400}
             height={400}
             sizes="(max-width: 768px) 100vw,

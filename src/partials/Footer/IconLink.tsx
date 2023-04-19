@@ -25,7 +25,7 @@ const WrapperLink = styled(Link, {
 
 export default function IconLink({ link, icon, name }: StoreProps) {
   return (
-    <WrapperLink href={link} id={icon}>
+    <WrapperLink href={link} id={icon} target="blank">
       <Image alt={name} fill={true} src={`/img/icons/${icon}.svg`} />
     </WrapperLink>
   )

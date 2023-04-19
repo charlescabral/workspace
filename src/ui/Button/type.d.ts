@@ -4,6 +4,7 @@ export interface ButtonProps extends ReactNode {
   href?: LinkProps
   color?: string
   rounded?: boolean
+  target?: string
   weight?: string
   size?: string
   bordered?: boolean

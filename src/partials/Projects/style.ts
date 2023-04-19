@@ -17,10 +17,11 @@ export const ProjectsList = styled('div', {
 
 export const ProjectItem = styled('div', {
   display: 'flex',
-  minHeight: '25rem',
+  minHeight: '28rem',
   maxWidth: '100%',
   minWidth: '$sizes$project',
-  padding: '$12 0 $20 $10'
+  padding: '$20 0 $20 $10',
+  marginTop: '-$15'
 })
 
 export const Project = styled('div', {
@@ -83,7 +84,7 @@ export const Infos = styled(Row, {
   backgroundColor: '$cardBg',
   position: 'absolute',
   width: 290,
-  height: 150,
+  height: 158,
   overflow: 'hidden',
   margin: '$10',
   borderRadius: '$xs',
@@ -130,9 +131,8 @@ export const ActionBar = styled(Row, {
   left: 0,
   zIndex: '$max',
   width: '100%',
-  overflow: 'hidden',
   minWidth: '288px',
-  padding: '$10 $10',
+  padding: '$6',
   pointerEvents: 'none',
   transform: 'translateZ(0)',
 
@@ -155,7 +155,7 @@ export const Tools = styled(Col, {
 export const Sample = styled(Row, {
   overflow: 'hidden',
   width: '58%',
-  maxHeight: '288px',
+  maxHeight: '18rem',
   position: 'relative',
   zIndex: '$1'
 })
@@ -177,8 +177,6 @@ export const Action = styled(Button, {
   zIndex: '$max',
   margin: 'auto',
   paddingBottom: '$1',
-  // opacity: 0,
-  // visibility: 'hidden',
 
   variants: {
     show: {

@@ -8,6 +8,7 @@ const Button = forwardRef<HTMLButtonElement | LinkProps, ButtonProps>(
     {
       children,
       href,
+      target,
       color,
       rounded,
       bordered,
@@ -239,6 +240,7 @@ const Button = forwardRef<HTMLButtonElement | LinkProps, ButtonProps>(
         href={href ? href : ''}
         color={color}
         rounded={rounded}
+        target={target}
         size={size}
         bordered={bordered}
         weight={weight}

@@ -42,5 +42,6 @@ export const FloatBrand = styled(Image, {
   bottom: -160,
   opacity: 1,
   borderRadius: '$rounded',
-  boxShadow: '$hirer'
+  boxShadow: '$hirer',
+  pointerEvents: 'none'
 })

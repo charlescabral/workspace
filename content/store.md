@@ -23,23 +23,33 @@ social: [
 sponsors: [
   {
     name: 'Vercel',
-    link: '@www',
+    link: 'https://vercel.com/',
     icon: 'vercel'
   },
   {
     name: 'Next',
-    link: '@www',
+    link: 'https://nextjs.org/',
     icon: 'next'
   },
   {
     name: 'React',
-    link: '@www',
+    link: 'https://react.dev/',
     icon: 'react'
   },
   {
     name: 'Typescript',
-    link: '@www',
+    link: 'https://www.typescriptlang.org/',
     icon: 'typescript'
+  },
+  {
+    name: 'Stitches',
+    link: 'https://stitches.dev/',
+    icon: 'stitches'
+  },
+  {
+    name: 'Markdown',
+    link: 'https://daringfireball.net/projects/markdown/',
+    icon: 'md'
   }
 ]
 clients: [
@@ -75,6 +85,4 @@ clients: [
   },
 ]
 ---
-
-
 
