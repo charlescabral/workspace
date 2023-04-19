@@ -18,11 +18,11 @@ export default function Projects({ projects }: PartialsProps) {
   const timeline = useMemo(() => gsap.timeline(), [])
   const arrowLeft = useRef<HTMLButtonElement>(null)
 
-  const projectsOrdered = projects.sort(
-    (next: MarkdownProps, curr: MarkdownProps) => {
-      return getMdData(next).data.index > getMdData(curr).data.index ? 1 : -1
-    }
-  )
+  // const projectsOrdered = projects.sort(
+  //   (next: MarkdownProps, curr: MarkdownProps) => {
+  //     return getMdData(next).data.index > getMdData(curr).data.index ? 1 : -1
+  //   }
+  // )
   const arrowRight = useRef<HTMLButtonElement>(null)
 
   const time = 0.2
@@ -70,11 +70,9 @@ export default function Projects({ projects }: PartialsProps) {
                 onMouseLeave={leaveHandler}
               >
                 <Slider.Slides ref={emblaRef} cols={2}>
-                  {projectsOrdered.map(
-                    (projectProps: MarkdownProps, i: number) => {
-                      return <Card key={i} {...getMdData(projectProps)} />
-                    }
-                  )}
+                  {projects.map((projectProps: MarkdownProps, i: number) => {
+                    return <Card key={i} {...getMdData(projectProps)} />
+                  })}
                 </Slider.Slides>
                 <Action
                   color="neutral"

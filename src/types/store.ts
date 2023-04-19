@@ -13,8 +13,8 @@ export type ModalProps = {
 }
 
 export type StoreDataProps = {
-  social?: StoreProps[]
-  sponsors?: StoreProps[]
+  social: StoreProps[]
+  sponsors: StoreProps[]
   modal?: ModalProps
 }
 

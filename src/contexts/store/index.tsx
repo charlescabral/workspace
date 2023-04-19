@@ -2,7 +2,8 @@ import { createContext, FC, useContext, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@/hooks'
 import { UseStoreProps, StoreProviderProps } from './type'
 
-export const StoreContext = createContext<UseStoreProps | undefined>({
+export const StoreContext = createContext<UseStoreProps>({
+  storeContext: null,
   setStore: () => null
 })
 

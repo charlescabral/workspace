@@ -13,32 +13,14 @@ import Footer from '@/partials/Footer'
 // import { Cursor } from '@/ui/Cursor'
 
 export default function Default({ children }: PropsWithChildren) {
-  // const lenis = useLenis({})
-
-  // useEffect(() => {
-  //   function onHashChangeStart(url: string) {
-  //     url = '#' + url.split('#').pop()
-  //     lenis.scrollTo(url)
-  //   }
-
-  //   Router.events.on('hashChangeStart', onHashChangeStart)
-
-  //   return () => {
-  //     Router.events.off('hashChangeStart', onHashChangeStart)
-  //   }
-  // }, [lenis])
-
   return (
     <TransitionProvider>
       <TransitionLayout>
-        {/* <Lenis root> */}
         <Wrapper>
           <Header />
           <Main>{children}</Main>
-          {/* <Cursor /> */}
           <Footer />
         </Wrapper>
-        {/* </Lenis> */}
       </TransitionLayout>
     </TransitionProvider>
   )
