@@ -1,13 +1,13 @@
 import { useState } from 'react'
-// import { useRect } from '@studio-freight/hamo'
-import { getMdItem } from '@/lib'
-import { useIsomorphicLayoutEffect } from '@/hooks'
-import { PartialProps, MarkdownProps, PageProps } from '@/types'
 
 import Bio from '@/partials/Bio'
 import Projects from '@/partials/Projects'
 import Spotlight from '@/partials/Spotlight'
 import Trajectory from '@/partials/Trajectory'
+
+import { getMdItem } from '@/lib'
+import { useIsomorphicLayoutEffect } from '@/hooks'
+import { PartialProps, MarkdownProps, PageProps } from '@/types'
 
 export default function HomeTemplate({
   partials,

@@ -2,12 +2,16 @@ import { useMemo, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 
 import Typography from '@/ui/Typography'
+import { Col } from '@/ui/Structure'
+import Button from '@/ui/Button'
+import { LinkIcon, EyeIcon } from '@/ui/Icons'
 import Texture from '@/components/Texture'
 import { useStore } from '@/contexts/store'
+import { useIsomorphicLayoutEffect } from '@/hooks'
 
 import { MarkdownProps } from '@/types'
-import { useIsomorphicLayoutEffect } from '@/hooks'
-import { Col } from '@/ui/Structure'
+import Preview from './Preview'
+import IconTool from './IconTool'
 import {
   ProjectItem,
   Project,
@@ -21,10 +25,6 @@ import {
   Tools,
   Description
 } from './style'
-import Button from '@/ui/Button'
-import Preview from './Preview'
-import IconTool from './IconTool'
-import { LinkIcon, EyeIcon } from '@/ui/Icons'
 
 export default function Card(props: MarkdownProps) {
   const {

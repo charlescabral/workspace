@@ -1,18 +1,18 @@
 import ContentLoader from 'react-content-loader'
 
-interface CircleLoaderPros {
+interface CirclePros {
   size: number
   columns: number
   padding: number
   marginBottom: number
 }
 
-export const CircleLoader = ({
+export default function Circle({
   size,
   columns,
   padding,
   marginBottom
-}: CircleLoaderPros) => {
+}: CirclePros) {
   const speed = 0.8
 
   const circleHeightWithPadding = size + padding

@@ -1,6 +1,7 @@
+import { styled } from '@/styles'
 import ContentLoader from 'react-content-loader'
 
-interface SquareLoaderProps {
+interface SquareProps {
   height: number
   width: number
   padding: number
@@ -8,15 +9,20 @@ interface SquareLoaderProps {
   marginBottom: number
 }
 
-export const SquareLoader = ({
+const Wrapper = styled(ContentLoader, {
+  margin: '0 auto',
+  display: 'block'
+})
+
+export default function Square({
   height,
   width,
   padding,
   columns,
   marginBottom
-}: SquareLoaderProps) => {
+}: SquareProps) {
   const speed = 0.8
-  const radius = 3
+  const radius = 10
 
   const coverHeightWithPadding = height + padding
   const coverWidthWithPadding = width + padding
@@ -24,7 +30,7 @@ export const SquareLoader = ({
   const covers = Array(columns).fill(1)
 
   return (
-    <ContentLoader
+    <Wrapper
       foregroundColor="#FAFAFA"
       backgroundColor="#F4F4F4"
       speed={speed}
@@ -49,6 +55,6 @@ export const SquareLoader = ({
           />
         )
       })}
-    </ContentLoader>
+    </Wrapper>
   )
 }

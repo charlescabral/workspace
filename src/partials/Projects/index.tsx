@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 
 import { MarkdownProps, PartialsProps } from '@/types'
 import { Container } from '@/ui/Structure'
+import { ArrowLeft, ArrowRight } from '@/ui/Icons'
 import { getMdData } from '@/lib'
 import { useWindowSize } from '@/hooks'
 
@@ -11,7 +12,6 @@ import { Slider } from '@/components/Slider'
 
 import Card from './Card'
 import { ProjectsMain, ProjectsList, Action } from './style'
-import { ArrowLeft, ArrowRight } from '@/ui/Icons'
 
 export default function Projects({ projects }: PartialsProps) {
   const { width } = useWindowSize()
