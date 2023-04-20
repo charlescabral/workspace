@@ -1,4 +1,4 @@
-import { Container, Row, Col } from '@/ui/Structure'
+import { Container, Row } from '@/ui/Structure'
 
 type ErrorPageProps = {
   code: number

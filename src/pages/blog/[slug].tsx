@@ -30,7 +30,7 @@ export default function Post({ post }: PostProps) {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const store = getStore()
+  const store = await getStore()
   const post = getPostBySlug(params.slug, [
     'title',
     'date',
@@ -40,7 +40,6 @@ export async function getStaticProps({ params }: Params) {
     'ogImage',
     'coverImage'
   ])
-
   const content = await markdownToHtml(post.content)
 
   return {
