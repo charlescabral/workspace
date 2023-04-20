@@ -29,7 +29,7 @@ export default function Post({ post }: PostProps) {
   )
 }
 
-export async function getStaticProps({ params }: Params) {
+export async function getServerSideProps({ params }: Params) {
   const store = await getStore()
   const post = getPostBySlug(params.slug, [
     'title',

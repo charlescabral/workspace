@@ -15,11 +15,9 @@ import Nprogress from '@/ui/Nprogress'
 import { RealViewport } from '@/components/RealViewport'
 
 export default function App({ Component, pageProps }: AppProps) {
-  // const lenis = useLenis({})
   const { store } = pageProps
 
   useIsomorphicLayoutEffect(() => {
-    // lenis?.start()
     window.history.scrollRestoration = 'manual'
     reportWebVitals
   }, [])

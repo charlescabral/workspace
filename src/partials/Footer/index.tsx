@@ -1,9 +1,12 @@
 import { useMemo } from 'react'
 import Link from 'next/link'
+
 import { useStore } from '@/contexts/store'
 import { Container, Row } from '@/ui/Structure'
 import Sepatator from '@/ui/Structure/Separator'
 import Typography from '@/ui/Typography'
+import { BrandIcon } from '@/ui/Icons'
+
 import IconLink from './IconLink'
 import { StoreProps } from '@/types'
 import {
@@ -14,10 +17,10 @@ import {
   FirstRow,
   IconsLicenseCCbySA
 } from './style'
-import { BrandIcon } from '@/ui/Icons'
 
 export default function Footer() {
   const year = useMemo(() => new Date().getFullYear(), [])
+
   const {
     storeContext: { sponsors, social }
   } = useStore()
