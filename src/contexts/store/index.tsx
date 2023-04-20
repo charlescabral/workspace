@@ -1,6 +1,7 @@
 import { createContext, FC, useContext, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@/hooks'
 import { UseStoreProps, StoreProviderProps } from './type'
+import { callAPI } from '@/lib'
 
 export const StoreContext = createContext<UseStoreProps>({
   storeContext: null,
@@ -11,8 +12,15 @@ export const StoreProvider: FC<StoreProviderProps> = ({ store, children }) => {
   const [storeContext, setStore] = useState<UseStoreProps>(store)
 
   useIsomorphicLayoutEffect(() => {
-    setStore(store)
-  }, [])
+    if (store) {
+      setStore(store)
+    } else {
+      callAPI('store').then((result) => {
+        const storeApi = Object.values({ ...result })[0] as UseStoreProps
+        setStore(storeApi)
+      })
+    }
+  }, [store])
 
   return (
     <StoreContext.Provider value={{ storeContext, setStore }}>

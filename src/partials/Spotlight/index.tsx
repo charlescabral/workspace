@@ -34,7 +34,13 @@ export default function Spotlight({ projects }: PartialsProps) {
               <AnimateSplitText text="para internet" />
             </Typography>
             <Action>
-              <Button color="primary" rounded size="sm" icon="r">
+              <Button
+                color="primary"
+                rounded
+                size="sm"
+                icon="r"
+                css={{ marginRight: '$10' }}
+              >
                 Meu Currículo
                 <Left
                   size={10}

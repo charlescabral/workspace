@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import Link from 'next/link'
 
 import { useStore } from '@/contexts/store'
@@ -7,8 +7,6 @@ import Sepatator from '@/ui/Structure/Separator'
 import Typography from '@/ui/Typography'
 import { BrandIcon } from '@/ui/Icons'
 
-import IconLink from './IconLink'
-import { StoreProps } from '@/types'
 import {
   FooterMain,
   Sponsors,
@@ -17,13 +15,19 @@ import {
   FirstRow,
   IconsLicenseCCbySA
 } from './style'
+import { useIsomorphicLayoutEffect } from '@/hooks'
+import IconLink from './IconLink'
+import { StoreProps, StoreDataProps } from '@/types'
 
 export default function Footer() {
   const year = useMemo(() => new Date().getFullYear(), [])
+  const [store, setStore] = useState<StoreDataProps>()
 
-  const {
-    storeContext: { sponsors, social }
-  } = useStore()
+  const { storeContext } = useStore()
+
+  useIsomorphicLayoutEffect(() => {
+    storeContext && setStore(storeContext)
+  }, [storeContext])
 
   return (
     <FooterMain>
@@ -37,7 +41,7 @@ export default function Footer() {
               </Typography>
             </Row>
             <Row className="sponsors">
-              {sponsors.map((prop: StoreProps, i: number) => (
+              {store?.sponsors.map((prop: StoreProps, i: number) => (
                 <IconLink key={i} {...prop} />
               ))}
             </Row>
@@ -49,7 +53,7 @@ export default function Footer() {
               </Typography>
             </Row>
             <Row className="social">
-              {social.map((prop: StoreProps, i: number) => (
+              {store?.social.map((prop: StoreProps, i: number) => (
                 <IconLink key={i} {...prop} />
               ))}
             </Row>
