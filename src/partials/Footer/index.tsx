@@ -15,13 +15,12 @@ import {
   IconsLicenseCCbySA
 } from './style'
 import { BrandIcon } from '@/ui/Icons'
-import { UseStoreProps } from '@/contexts/store/type'
 
 export default function Footer() {
   const year = useMemo(() => new Date().getFullYear(), [])
   const {
     storeContext: { sponsors, social }
-  } = useStore() as UseStoreProps
+  } = useStore()
 
   return (
     <FooterMain>

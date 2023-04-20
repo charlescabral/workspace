@@ -56,33 +56,33 @@ clients: [
   {
     name: 'TremeTerra',
     icon: 'email',
-    link: 'https://a.com',
+    link: 'https://a.com'
   },
   {
     name: 'STR',
     icon: 'linkedin',
-    link: 'https://a.com',
+    link: 'https://a.com'
   },
   {
     name: 'Marabraz',
     icon: 'github',
-    link: 'https://a.com',
+    link: 'https://a.com'
   },
   {
     name: 'LG',
     icon: 'github',
-    link: 'https://a.com',
+    link: 'https://a.com'
   },
   {
     name: 'Tokstok',
     icon: 'github',
-    link: 'https://a.com',
+    link: 'https://a.com'
   },
   {
     name: 'Movida',
     icon: 'github',
-    link: 'https://a.com',
-  },
+    link: 'https://a.com'
+  }
 ]
 ---
 

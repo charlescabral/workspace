@@ -14,7 +14,7 @@ export default function Home(props: PageProps) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const store = await getStore()
   const partials = await getMarkdownContent('partials', ['bio'])
   const projects = await getMarkdownContent('projects')
