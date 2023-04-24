@@ -123,9 +123,13 @@ export const injectGlobalStyles = globalCss({
 
   h1: {},
   h2: {
-    fontSize: '$7xl',
-    lineHeight: '$7xl',
+    fontSize: '$4xl',
+    lineHeight: '$sm',
     fontWeight: '$extrabold',
+    '@md': {
+      fontSize: '$7xl',
+      lineHeight: '$7xl'
+    },
     '@lg': {
       fontSize: '$8xl'
     }

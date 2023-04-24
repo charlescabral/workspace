@@ -10,17 +10,19 @@ interface RefProps extends PropsWithChildren {
 }
 
 const Slides = forwardRef<HTMLDivElement, RefProps>(
-  ({ children, fluid, axisY, cols }: RefProps, ref) => (
-    <Wrapper ref={ref} fluid={fluid}>
-      <Container fluid={fluid} axisY={axisY}>
-        {[children].flat().map((child: ReactNode, i: number) => (
-          <Slide key={i} cols={cols}>
-            {child}
-          </Slide>
-        ))}
-      </Container>
-    </Wrapper>
-  )
+  ({ children, fluid, axisY, cols }: RefProps, ref) => {
+    return (
+      <Wrapper ref={ref} fluid={fluid}>
+        <Container fluid={fluid} axisY={!!axisY}>
+          {[children].flat().map((child: ReactNode, i: number) => (
+            <Slide key={i} cols={cols}>
+              {child}
+            </Slide>
+          ))}
+        </Container>
+      </Wrapper>
+    )
+  }
 )
 Slides.displayName = 'Slides'
 

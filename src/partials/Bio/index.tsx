@@ -8,7 +8,12 @@ export default function Bio({ html }: MarkdownProps) {
     <>
       <Article>
         <Container size="xs">
-          <Row>
+          <Row
+            align={{
+              '@initial': 'center',
+              '@md': 'start'
+            }}
+          >
             <div dangerouslySetInnerHTML={{ __html: html }} />
             <Avatar
               width="100"

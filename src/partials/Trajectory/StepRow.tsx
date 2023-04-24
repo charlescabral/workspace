@@ -65,7 +65,7 @@ export default function StepRow({
             />
           </OverflowLimit>
         )}
-        <Col>
+        <Col css={{ maxWidth: '60%' }}>
           <Row direction="col">
             <Typography as="p" color="primary" size="xs" weight="bold">
               {business}

@@ -9,10 +9,13 @@ export const Browser = styled('div', {
   boxShadow: '$lg',
   borderRadius: '$md',
   position: 'relative',
-  display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-evenly',
-  backdropFilter: 'blur(1rem)'
+  backdropFilter: 'blur(1rem)',
+  display: 'none',
+  '@sm': {
+    display: 'flex'
+  }
 })
 
 export const Field = styled('div', {

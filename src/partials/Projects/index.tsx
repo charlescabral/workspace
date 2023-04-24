@@ -5,7 +5,7 @@ import { MarkdownProps, PartialsProps } from '@/types'
 import { Container } from '@/ui/Structure'
 import { ArrowLeft, ArrowRight } from '@/ui/Icons'
 import { getMdData } from '@/lib'
-import { useWindowSize } from '@/hooks'
+import { useWindowSize, useBreakpoint } from '@/hooks'
 
 import Typography from '@/ui/Typography'
 import { Slider } from '@/components/Slider'
@@ -17,13 +17,8 @@ export default function Projects({ projects }: PartialsProps) {
   const { width } = useWindowSize()
   const timeline = useMemo(() => gsap.timeline(), [])
   const arrowLeft = useRef<HTMLButtonElement>(null)
-
-  // const projectsOrdered = projects.sort(
-  //   (next: MarkdownProps, curr: MarkdownProps) => {
-  //     return getMdData(next).data.index > getMdData(curr).data.index ? 1 : -1
-  //   }
-  // )
   const arrowRight = useRef<HTMLButtonElement>(null)
+  const { isMobile } = useBreakpoint()
 
   const time = 0.2
 
@@ -55,10 +50,13 @@ export default function Projects({ projects }: PartialsProps) {
 
       <Slider
         emblaApi={{
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           containScroll: 'trimSnaps',
           align: 'center',
-          loop: true
+          loop: false,
+          breakpoints: {
+            '${defaultMedia.md}': { slidesToScroll: 2 }
+          }
         }}
       >
         {({ emblaRef, scrollNext, scrollPrev }) => {
@@ -82,6 +80,7 @@ export default function Projects({ projects }: PartialsProps) {
                   rounded
                   onClick={scrollPrev}
                   ref={arrowLeft}
+                  css={{ visibility: isMobile ? 'hidden' : 'visible' }}
                 >
                   <ArrowRight size={44} />
                 </Action>
@@ -93,6 +92,7 @@ export default function Projects({ projects }: PartialsProps) {
                   rounded
                   onClick={scrollNext}
                   ref={arrowRight}
+                  css={{ visibility: isMobile ? 'hidden' : 'visible' }}
                 >
                   <ArrowLeft size={44} />
                 </Action>

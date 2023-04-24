@@ -10,6 +10,7 @@ export const H1 = styled('h1', {
   textAlign: 'left',
   margin: 0,
   paddingLeft: '$4',
+  display: 'none',
 
   '.name, .career': {
     display: 'block',
@@ -26,5 +27,9 @@ export const H1 = styled('h1', {
     fontWeight: '$light',
     fontSize: '$xs',
     letterSpacing: '$widest'
+  },
+
+  '@md': {
+    display: 'block'
   }
 })

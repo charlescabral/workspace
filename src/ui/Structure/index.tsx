@@ -62,8 +62,6 @@ export const Main = styled('main', {
 export const Row = styled('div', {
   display: 'flex',
   flexWrap: 'wrap',
-  alignItems: 'flex-start',
-  placeContent: 'start',
   justifyContent: 'space-between',
 
   variants: {
@@ -73,9 +71,13 @@ export const Row = styled('div', {
       }
     },
     align: {
+      start: {
+        alignItems: 'flex-start',
+        placeContent: 'start',
+        justifyContent: 'space-between'
+      },
       middle: {
-        alignItems: 'center',
-        placeContent: 'space-between'
+        alignItems: 'center'
       },
       center: {
         alignItems: 'center',
@@ -94,6 +96,10 @@ export const Row = styled('div', {
         flexDirection: 'row'
       }
     }
+  },
+
+  defaultVariants: {
+    align: 'start'
   }
 })
 

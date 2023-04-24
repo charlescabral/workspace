@@ -1,12 +1,12 @@
 import { SvgProps } from './type'
 import { css } from '@/styles'
 
-export const Light = ({ fill, classname, size, inlineStyle }: SvgProps) => {
+export const Light = ({ fill, size, inlineStyle }: SvgProps) => {
   const style = css({ ...inlineStyle })
   const icon = css({ fill })
   return (
     <svg
-      className={`${classname} ${style()}`}
+      className={`icon ${style()}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 23 31"
       width={size - size / 3}

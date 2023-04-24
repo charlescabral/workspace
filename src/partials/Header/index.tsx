@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import Brand from '@/components/Brand'
 import { HeaderMain, HeaderContent } from './style'
@@ -16,9 +14,7 @@ export default function Header() {
       <Container size="md">
         <HeaderContent>
           <Brand />
-          <Suspense fallback={<div>Loading...</div>}>
-            <SwitchTheme />
-          </Suspense>
+          <SwitchTheme />
         </HeaderContent>
       </Container>
     </HeaderMain>

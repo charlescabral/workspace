@@ -7,7 +7,7 @@ import Button from '@/ui/Button'
 import { LinkIcon, EyeIcon } from '@/ui/Icons'
 import Texture from '@/components/Texture'
 import { useStore } from '@/contexts/store'
-import { useIsomorphicLayoutEffect } from '@/hooks'
+import { useBreakpoint, useIsomorphicLayoutEffect } from '@/hooks'
 
 import { MarkdownProps } from '@/types'
 import Preview from './Preview'
@@ -53,6 +53,7 @@ export default function Card(props: MarkdownProps) {
   const imageCard = useRef<HTMLImageElement>(null)
   const infos = useRef<HTMLDivElement>(null)
   const { storeContext, setStore } = useStore()
+  const { isMobile } = useBreakpoint()
 
   const timeIn = 0.25
   const timeOut = 0.25
@@ -212,12 +213,12 @@ export default function Card(props: MarkdownProps) {
   }
 
   const mouseEnter = () => {
-    !isActive && hovered()
+    !isActive && !isMobile && hovered()
   }
 
   const mouseLeave = () => {
     setDetail(false)
-    !isActive && inactived()
+    !isActive && !isMobile && inactived()
   }
 
   const openProject = () =>
@@ -251,7 +252,7 @@ export default function Card(props: MarkdownProps) {
           alt={title ? title : ''}
           width={400}
           height={240}
-          sizes="(max-width: 768px) 100vw,
+          sizes="(max-  width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
           src={

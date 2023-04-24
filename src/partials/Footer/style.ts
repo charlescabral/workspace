@@ -14,20 +14,36 @@ export const FooterMain = styled('footer', {
 })
 
 export const Social = styled(Col, {
-  paddingRight: '$40',
+  margin: '0 $10 $10',
+  '@md': {
+    margin: 0
+  },
   '.social > a, > div p': {
-    marginLeft: '$10'
+    margin: '$6',
+    '@md': {
+      margin: '0 0 0 $10'
+    }
   }
 })
 export const Sponsors = styled(Col, {
+  margin: '0 $10 $10',
+  '@md': {
+    margin: 0
+  },
   '.sponsors > a': {
-    marginRight: '$10'
+    margin: '$6',
+    '@md': {
+      margin: '0 $10 0 0'
+    }
   }
 })
 
 export const FirstRow = styled(Row, {
   paddingTop: '$10',
-  paddingBottom: '$20'
+  paddingBottom: '$10',
+  '@md': {
+    paddingBottom: '$20'
+  }
 })
 
 export const LastRow = styled(Row, {

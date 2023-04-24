@@ -3,8 +3,14 @@ import { styled } from '@/styles'
 import { Post } from '@/templates/Blog/components/style'
 
 export const Article = styled(Post, {
-  py: '$40',
-  display: 'flex'
+  py: '$20',
+  display: 'flex',
+  textAlign: 'center',
+
+  '@md': {
+    py: '$40',
+    textAlign: 'left'
+  }
 })
 
 export const Avatar = styled(Image, {

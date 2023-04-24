@@ -3,7 +3,10 @@ import { styled } from '@/styles'
 import { Row } from '@/ui/Structure'
 
 export const Article = styled('div', {
-  paddingBottom: '$40'
+  paddingBottom: '$20',
+  '@md': {
+    paddingBottom: '$40'
+  }
 })
 
 export const StepsList = styled('div', {
@@ -38,10 +41,14 @@ export const StepItem = styled(Row, {
 export const FloatBrand = styled(Image, {
   position: 'absolute',
   zIndex: 0,
-  right: 140,
+  right: 50,
   bottom: -160,
   opacity: 1,
   borderRadius: '$rounded',
   boxShadow: '$hirer',
-  pointerEvents: 'none'
+  pointerEvents: 'none',
+
+  '@md': {
+    right: 140
+  }
 })

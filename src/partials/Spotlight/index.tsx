@@ -39,7 +39,9 @@ export default function Spotlight({ projects }: PartialsProps) {
                 rounded
                 size="sm"
                 icon="r"
-                css={{ marginRight: '$10' }}
+                css={{
+                  marginRight: '$10'
+                }}
               >
                 Meu Currículo
                 <Left
@@ -49,7 +51,7 @@ export default function Spotlight({ projects }: PartialsProps) {
                 />
               </Button>
               <Button color="primary" rounded size="sm" flat icon="lr">
-                <Light fill={`#235C0D`} size={32} classname="icon" />
+                <Light size={32} />
                 Vamos Trocar Idéias?
                 <Left
                   size={10}

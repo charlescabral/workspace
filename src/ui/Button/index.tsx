@@ -25,7 +25,6 @@ const Button = forwardRef<HTMLButtonElement | LinkProps, ButtonProps>(
     ref
   ) {
     const ButtonElement = styled(isLink ? Link : 'button', {
-      ...css,
       transition: '$button',
       transformStyle: 'preserve-3d',
       background: 'none',
@@ -38,6 +37,7 @@ const Button = forwardRef<HTMLButtonElement | LinkProps, ButtonProps>(
       fontWeight: '$medium',
       pointerEvents: 'auto',
       transform: 'translateZ(0)',
+      ...css,
 
       '&:hover': {
         opacity: 0.9

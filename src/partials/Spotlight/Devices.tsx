@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Desktop from '@/components/Desktop'
 import { Slider } from '@/components/Slider'
 import Phone from '@/components/Phone'
+import { useBreakpoint } from '@/hooks'
 
 import { Jobs } from './style'
 import { PartialsProps } from '@/types'
@@ -13,15 +14,20 @@ import { partialValue } from '@/lib'
 export default function Devices({ jobs }: PartialsProps) {
   const featuredProjects = jobs.map((job) => partialValue(job))
   const [slideCurrent, setSlide] = useState<number>(0)
+  const { isMobile } = useBreakpoint()
   const [desktopRef, emblaDesk] = useEmblaCarousel({
     containScroll: 'keepSnaps',
     loop: true
   })
   const [phoneRef, emblaPhone] = useEmblaCarousel({
-    axis: 'y',
+    axis: isMobile ? 'x' : 'y',
     containScroll: 'trimSnaps',
     loop: true
   })
+
+  useEffect(() => {
+    console.log(isMobile)
+  }, [isMobile])
 
   useEffect(() => {
     if (!emblaDesk || !emblaPhone) return
@@ -74,12 +80,14 @@ export default function Devices({ jobs }: PartialsProps) {
       </Desktop>
       <Phone
         css={{
-          position: 'absolute',
-          left: 'calc(-$16)',
-          bottom: 'calc(-$16)'
+          '@md': {
+            position: 'absolute',
+            left: 'calc(-$16)',
+            bottom: 'calc(-$16)'
+          }
         }}
       >
-        <Slider.Slides fluid axisY ref={phoneRef}>
+        <Slider.Slides fluid axisY={!isMobile} ref={phoneRef}>
           {featuredProjects.map(
             (
               {

@@ -159,6 +159,7 @@ export const defaultTokens = {
   },
   sizes: {
     project: '520px',
+    projectMob: '300px',
     xs: '638px',
     sm: '960px',
     md: '1280px',

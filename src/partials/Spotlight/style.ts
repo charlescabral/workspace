@@ -14,37 +14,52 @@ export const Section = styled('section', {
 })
 
 export const Wrapper = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'row',
-  alignContent: 'center'
+  '@md': {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    alignContent: 'center'
+  }
 })
 
 export const Infos = styled('div', {
-  width: '50%',
+  width: '100%',
+  '@md': {
+    width: '50%'
+  },
   '@lg': {
     width: '60%'
   },
 
   h2: {
     color: '$spotlightTitle',
-    marginBottom: '$20'
+    marginBottom: '$10',
+    '@md': {
+      marginBottom: '$20'
+    }
   }
 })
 
 export const Jobs = styled('div', {
   position: 'relative',
-  width: '50%',
+  width: '100%',
+  '@md': {
+    width: '50%'
+  },
   '@lg': {
     width: '30%'
   }
 })
 
 export const Action = styled('div', {
-  display: 'flex',
+  display: 'none',
   flexWrap: 'wrap',
   flexDirection: 'row',
   alignItems: 'center',
+
+  '@md': {
+    display: 'flex'
+  },
 
   'a, buttom': {
     marginRight: '$10'

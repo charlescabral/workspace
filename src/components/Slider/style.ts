@@ -20,6 +20,9 @@ export const Container = styled('div', {
     axisY: {
       true: {
         flexDirection: 'column'
+      },
+      false: {
+        // flexDirection: 'row'
       }
     },
     fluid: {
