@@ -6,6 +6,7 @@ import Desktop from '@/components/Desktop'
 import { Slider } from '@/components/Slider'
 import Phone from '@/components/Phone'
 import { useBreakpoint } from '@/hooks'
+import { defaultMedia } from '@/styles/common'
 
 import { Jobs } from './style'
 import { PartialsProps } from '@/types'
@@ -20,9 +21,15 @@ export default function Devices({ jobs }: PartialsProps) {
     loop: true
   })
   const [phoneRef, emblaPhone] = useEmblaCarousel({
-    axis: isMobile ? 'x' : 'y',
-    containScroll: isMobile ? 'keepSnaps' : 'trimSnaps',
-    loop: true
+    axis: 'x',
+    containScroll: 'trimSnaps',
+    loop: true,
+    breakpoints: {
+      [defaultMedia.sm]: {
+        axis: 'y',
+        containScroll: 'keepSnaps'
+      }
+    }
   })
 
   useEffect(() => {

@@ -8,7 +8,7 @@ import Typography from '@/ui/Typography'
 export default function Trajectory({ trajectory }: PartialsProps) {
   return (
     <Article>
-      <Container size="xs">
+      <Container size="sm">
         <Typography as="h3">Trajetória</Typography>
         <hr />
         <StepsList>

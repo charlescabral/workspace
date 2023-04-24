@@ -12,6 +12,7 @@ import { Slider } from '@/components/Slider'
 
 import Card from './Card'
 import { ProjectsMain, ProjectsList, Action } from './style'
+import { defaultMedia } from '@/styles/common'
 
 export default function Projects({ projects }: PartialsProps) {
   const { width } = useWindowSize()
@@ -55,7 +56,7 @@ export default function Projects({ projects }: PartialsProps) {
           align: 'center',
           loop: false,
           breakpoints: {
-            '${defaultMedia.md}': { slidesToScroll: 2 }
+            [defaultMedia.sm]: { loop: true, slidesToScroll: 2 }
           }
         }}
       >

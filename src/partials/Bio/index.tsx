@@ -7,7 +7,7 @@ export default function Bio({ html }: MarkdownProps) {
   return (
     <>
       <Article>
-        <Container size="xs">
+        <Container size="sm">
           <Row
             align={{
               '@initial': 'center',
