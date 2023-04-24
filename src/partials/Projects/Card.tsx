@@ -97,10 +97,10 @@ export default function Card(props: MarkdownProps) {
       .to(
         imageCard.current,
         {
-          filter: 'grayscale(1)',
-          opacity: 0.6,
+          filter: isMobile ? '' : 'grayscale(1)',
+          opacity: isMobile ? 1 : 0.6,
           right: -40,
-          bottom: -10,
+          bottom: isMobile ? 120 : -10,
           duration: timeOut,
           ease: 'back.out'
         },
@@ -111,8 +111,8 @@ export default function Card(props: MarkdownProps) {
         {
           width: 290,
           height: 158,
-          bottom: 10,
-          left: 10,
+          bottom: isMobile ? 0 : 10,
+          left: isMobile ? 0 : 10,
           duration: timeOut,
           ease: 'back.out'
         },
@@ -138,8 +138,8 @@ export default function Card(props: MarkdownProps) {
         {
           width: '100%',
           height: '100%',
-          bottom: -24,
-          left: -24,
+          bottom: isMobile ? 0 : -24,
+          left: isMobile ? 0 : -24,
           duration: timeIn,
           ease: 'back.in'
         },
@@ -240,6 +240,7 @@ export default function Card(props: MarkdownProps) {
     <ProjectItem ref={project}>
       <Project
         ref={bg}
+        css={isMobile && { backgroundColor: color }}
         actived={isActive}
         onClick={openProject}
         onMouseEnter={mouseEnter}
@@ -252,7 +253,7 @@ export default function Card(props: MarkdownProps) {
           alt={title ? title : ''}
           width={400}
           height={240}
-          sizes="(max-  width: 768px) 100vw,
+          sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
           src={
@@ -262,7 +263,7 @@ export default function Card(props: MarkdownProps) {
         <Infos ref={infos} direction={isActive ? 'row' : 'col'}>
           <Col
             display={!isActive ? 'b' : 'f'}
-            css={{ overflow: 'hidden', minHeight: '100%', width: '100%' }}
+            direction={isMobile ? 'col' : 'row'}
           >
             <Details isOpen={isActive} direction="col">
               <ShortDetail direction="col">
@@ -286,6 +287,7 @@ export default function Card(props: MarkdownProps) {
                 />
               </FullDetails>
             </Details>
+
             <Sample ref={sample}>
               <Preview {...image} ref={preview} />
               <ActionBar align="middle" ref={action}>

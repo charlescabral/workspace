@@ -41,7 +41,10 @@ export const Slide = styled('div', {
   variants: {
     cols: {
       '2': {
-        flex: `0 0 ${defaultTokens.sizes.project}`
+        flex: `0 0 ${defaultTokens.sizes.projectMob}`,
+        '@md': {
+          flex: `0 0 ${defaultTokens.sizes.project}`
+        }
       }
     }
   }

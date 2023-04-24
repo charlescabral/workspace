@@ -13,7 +13,7 @@ const Slides = forwardRef<HTMLDivElement, RefProps>(
   ({ children, fluid, axisY, cols }: RefProps, ref) => {
     return (
       <Wrapper ref={ref} fluid={fluid}>
-        <Container fluid={fluid} axisY={!!axisY}>
+        <Container fluid={fluid} axisY={axisY}>
           {[children].flat().map((child: ReactNode, i: number) => (
             <Slide key={i} cols={cols}>
               {child}

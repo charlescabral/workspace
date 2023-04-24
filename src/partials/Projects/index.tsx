@@ -54,9 +54,9 @@ export default function Projects({ projects }: PartialsProps) {
           slidesToScroll: 1,
           containScroll: 'trimSnaps',
           align: 'center',
-          loop: false,
+          loop: true,
           breakpoints: {
-            [defaultMedia.sm]: { loop: true, slidesToScroll: 2 }
+            [defaultMedia.sm]: { slidesToScroll: 2 }
           }
         }}
       >

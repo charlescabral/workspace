@@ -9,7 +9,13 @@ const Project = styled(Image, {
   width: '100%',
   height: 'auto',
   zIndex: '$1',
-  animation: `${fadeIn} 1s`
+  animation: `${fadeIn} 1s`,
+  visibility: 'hidden',
+  display: 'none',
+  '@md': {
+    visibility: 'visible',
+    display: 'block'
+  }
 })
 
 const Root = styled(ScrollArea.Root, {
@@ -21,7 +27,10 @@ const Root = styled(ScrollArea.Root, {
 const Viewport = styled(ScrollArea.Viewport, {
   size: '100%',
   paddingBottom: 60,
-  borderRadius: 'inherit'
+  borderRadius: 'inherit',
+  '@md': {
+    display: 'block'
+  }
 })
 
 const Scrollbar = styled(ScrollArea.Scrollbar, {

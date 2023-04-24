@@ -19,9 +19,13 @@ export const ProjectItem = styled('div', {
   display: 'flex',
   minHeight: '28rem',
   maxWidth: '100%',
-  minWidth: '$sizes$project',
-  padding: '$20 0 $20 $10',
-  marginTop: '-$15'
+  minWidth: '$sizes$projectMob',
+  padding: '$20 $5',
+  marginTop: '-$15',
+
+  '@md': {
+    minWidth: '$sizes$project'
+  }
 })
 
 export const Project = styled('div', {
@@ -72,22 +76,25 @@ export const ProjectImg = styled(Image, {
   zIndex: '$1',
   position: 'absolute',
   right: -40,
-  bottom: -10,
+  bottom: 120,
   borderRadius: '$sm',
   transformStyle: 'preserve-3d',
-  filter: 'grayscale(1)',
-  opacity: 0.6
+  height: 'auto',
+
+  '@md': {
+    opacity: 0.6,
+    filter: 'grayscale(1)',
+    bottom: -10
+  }
 })
 
 export const Infos = styled(Row, {
   zIndex: '$2',
   backgroundColor: '$cardBg',
   position: 'absolute',
-  width: 290,
-  height: 158,
+  maxWidth: '100%',
+  minHeight: 158,
   overflow: 'hidden',
-  margin: '$10',
-  borderRadius: '$xs',
   boxShadow: '$lg',
   transformStyle: 'preserve-3d',
 
@@ -97,6 +104,13 @@ export const Infos = styled(Row, {
 
   p: {
     lineHeight: '$md'
+  },
+
+  '@md': {
+    borderRadius: '$xs',
+    margin: '$10',
+    width: 290,
+    minHeight: 158
   }
 })
 
@@ -111,7 +125,10 @@ export const Details = styled(Row, {
   variants: {
     isOpen: {
       true: {
-        width: '42%'
+        minHeight: 228,
+        '@md': {
+          width: '42%'
+        }
       }
     }
   }
@@ -131,7 +148,7 @@ export const ActionBar = styled(Row, {
   left: 0,
   zIndex: '$max',
   width: '100%',
-  minWidth: '288px',
+  minWidth: '100%',
   padding: '$6',
   pointerEvents: 'none',
   transform: 'translateZ(0)',
@@ -145,19 +162,30 @@ export const ActionBar = styled(Row, {
     position: 'absolute',
     left: -4,
     bottom: -4
+  },
+
+  '@md': {
+    minWidth: '288px'
   }
 })
 
-export const Tools = styled(Col, {
-  transform: 'scale(0.9)'
+export const Tools = styled('div', {
+  transform: 'scale(0.9)',
+  display: 'none',
+  '@md': {
+    display: 'flex'
+  }
 })
 
 export const Sample = styled(Row, {
   overflow: 'hidden',
-  width: '58%',
+  width: '100%',
   maxHeight: '18rem',
   position: 'relative',
-  zIndex: '$1'
+  zIndex: '$1',
+  '@md': {
+    width: '58%'
+  }
 })
 
 export const Description = styled(Col, {

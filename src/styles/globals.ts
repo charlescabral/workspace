@@ -134,9 +134,28 @@ export const injectGlobalStyles = globalCss({
       fontSize: '$8xl'
     }
   },
-  h3: { fontSize: '$4xl', marginBottom: '$14', fontWeight: '$thin' },
-  h4: { fontSize: '$3xl' },
-  h5: { fontSize: '$2xl' },
+  h3: {
+    fontSize: '$3xl',
+    marginBottom: '$10',
+    fontWeight: '$thin',
+
+    '@md': {
+      fontSize: '$4xl',
+      marginBottom: '$14'
+    }
+  },
+  h4: {
+    fontSize: '$xl',
+    '@md': {
+      fontSize: '$3xl'
+    }
+  },
+  h5: {
+    fontSize: '$xl',
+    '@md': {
+      fontSize: '$2xl'
+    }
+  },
   h6: { fontSize: '$xl' },
   'h4, h5, h6': {
     fontWeight: '$extrabold',

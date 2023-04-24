@@ -1,6 +1,6 @@
 import { StoreDataProps } from '.'
 
-export type PartialImageProps = {
+export interface PartialImageProps {
   desktop: string
   deskEntire?: string
   phone: string

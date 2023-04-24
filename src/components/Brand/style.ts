@@ -10,7 +10,6 @@ export const H1 = styled('h1', {
   textAlign: 'left',
   margin: 0,
   paddingLeft: '$4',
-  display: 'none',
 
   '.name, .career': {
     display: 'block',
@@ -19,17 +18,21 @@ export const H1 = styled('h1', {
 
   '.name': {
     marginBottom: '$1',
-    fontSize: '$lg',
+    fontSize: '$sm',
     letterSpacing: '$wider',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+
+    '@md': {
+      fontSize: '$lg'
+    }
   },
   '.career': {
     fontWeight: '$light',
-    fontSize: '$xs',
-    letterSpacing: '$widest'
-  },
+    fontSize: '10px',
+    letterSpacing: '$widest',
 
-  '@md': {
-    display: 'block'
+    '@md': {
+      fontSize: '$xs'
+    }
   }
 })

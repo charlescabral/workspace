@@ -110,6 +110,14 @@ export const Col = styled('div', {
         display: 'block'
       },
       f: { display: 'flex' }
+    },
+    direction: {
+      col: {
+        flexDirection: 'column'
+      },
+      row: {
+        flexDirection: 'row'
+      }
     }
   },
 
