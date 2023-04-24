@@ -21,13 +21,9 @@ export default function Devices({ jobs }: PartialsProps) {
   })
   const [phoneRef, emblaPhone] = useEmblaCarousel({
     axis: isMobile ? 'x' : 'y',
-    containScroll: 'trimSnaps',
+    containScroll: isMobile ? 'keepSnaps' : 'trimSnaps',
     loop: true
   })
-
-  useEffect(() => {
-    console.log(isMobile)
-  }, [isMobile])
 
   useEffect(() => {
     if (!emblaDesk || !emblaPhone) return
