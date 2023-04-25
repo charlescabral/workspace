@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import Image from 'next/image'
 
 import Desktop from '@/components/Desktop'
@@ -19,11 +20,14 @@ export default function Devices({ jobs }: PartialsProps) {
     containScroll: 'keepSnaps',
     loop: true
   })
-  const [phoneRef, emblaPhone] = useEmblaCarousel({
-    axis: isMobile ? 'x' : 'y',
-    containScroll: 'trimSnaps',
-    loop: true
-  })
+  const [phoneRef, emblaPhone] = useEmblaCarousel(
+    {
+      axis: isMobile ? 'x' : 'y',
+      containScroll: 'trimSnaps',
+      loop: true
+    },
+    [Autoplay()]
+  )
 
   useEffect(() => {
     if (!emblaDesk || !emblaPhone) return
@@ -83,7 +87,7 @@ export default function Devices({ jobs }: PartialsProps) {
           }
         }}
       >
-        <Slider.Slides fluid axisY={!isMobile} ref={phoneRef}>
+        <Slider.Slides fluid axis={isMobile ? 'x' : 'y'} ref={phoneRef}>
           {featuredProjects.map(
             (
               {

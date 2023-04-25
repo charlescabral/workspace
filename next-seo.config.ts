@@ -5,10 +5,5 @@ export default {
     locale: 'pt_BR',
     url: 'https://charlescabral.com',
     site_name: 'Charles Cabral / Front-end Developer'
-  },
-  twitter: {
-    handle: '@charlescabral',
-    site: '@site',
-    cardType: 'summary_large_image'
   }
 }

@@ -5,15 +5,15 @@ import { EmblaProps, SliderProps } from './types'
 
 interface RefProps extends PropsWithChildren {
   fluid?: boolean
-  axisY?: boolean
+  axis?: string
   cols?: number
 }
 
 const Slides = forwardRef<HTMLDivElement, RefProps>(
-  ({ children, fluid, axisY, cols }: RefProps, ref) => {
+  ({ children, fluid, axis, cols }: RefProps, ref) => {
     return (
       <Wrapper ref={ref} fluid={fluid}>
-        <Container fluid={fluid} axisY={axisY}>
+        <Container fluid={fluid} axis={axis === 'y' ? 'y' : 'x'}>
           {[children].flat().map((child: ReactNode, i: number) => (
             <Slide key={i} cols={cols}>
               {child}

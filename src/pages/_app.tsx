@@ -38,7 +38,17 @@ export default function App({ Component, pageProps }: AppProps) {
           <link rel="apple-touch-icon" href="/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#06092b" />
-          <meta name="description" content="A simple to show my job" />
+          <meta
+            name="description"
+            content="Olá! Sou Charles Cabral. Sou desenvolvedor web com mais de 10 anos de
+            experiência, focado em front-end. Amo criar produtos com estrutura de dados
+            interessantes, interfaces bonitas e ótima experiência do usuário.
+            Atualmente em busca de novos projetos."
+          />
+          <meta
+            name="keywords"
+            content="Developer, Javascript, Freelancer, React, PHP, Vue JS Developer, React Developer, Magento Frontend Developer"
+          />
         </Head>
         <DefaultSeo {...SEO} />
         <Nprogress />

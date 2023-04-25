@@ -59,6 +59,7 @@
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "date-fns": "^2.29.3",
+    "embla-carousel-autoplay": "^7.1.0",
     "embla-carousel-react": "^7.1.0",
     "eslint": "^8.32.0",
     "eslint-config-next": "^13.1.2",

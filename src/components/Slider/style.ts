@@ -17,12 +17,12 @@ export const Container = styled('div', {
   display: 'flex',
 
   variants: {
-    axisY: {
-      true: {
+    axis: {
+      y: {
         flexDirection: 'column'
       },
-      false: {
-        // flexDirection: 'row'
+      x: {
+        flexDirection: 'row'
       }
     },
     fluid: {

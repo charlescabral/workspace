@@ -1,6 +1,6 @@
 {
-  "name": "Charles Cabral",
-  "short_name": "Charles Dev",
+  "name": "Charles Cabral - Frontend Developer",
+  "short_name": "Charles C. Dev",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -16,7 +16,7 @@
     }
   ],
   "background_color": "#f4f4f4",
-  "description": "A simple to show my job",
+  "description": "Olá! Sou Charles Cabral. Sou desenvolvedor web com mais de 10 anos de experiência, focado em front-end. Amo criar produtos com estrutura de dados interessantes, interfaces bonitas e ótima experiência do usuário. Atualmente em busca de novos projetos",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"
