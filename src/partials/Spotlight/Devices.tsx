@@ -9,16 +9,18 @@ import Phone from '@/components/Phone'
 import { Jobs } from './style'
 import { PartialsProps } from '@/types'
 import { partialValue } from '@/lib'
+import { useBreakpoint } from '@/hooks'
 
 export default function Devices({ jobs }: PartialsProps) {
   const featuredProjects = jobs.map((job) => partialValue(job))
   const [slideCurrent, setSlide] = useState<number>(0)
+  const { isMobile } = useBreakpoint()
   const [desktopRef, emblaDesk] = useEmblaCarousel({
     containScroll: 'keepSnaps',
     loop: true
   })
   const [phoneRef, emblaPhone] = useEmblaCarousel({
-    axis: 'x',
+    axis: isMobile ? 'x' : 'y',
     containScroll: 'trimSnaps',
     loop: true
   })
@@ -81,7 +83,7 @@ export default function Devices({ jobs }: PartialsProps) {
           }
         }}
       >
-        <Slider.Slides fluid axisY ref={phoneRef}>
+        <Slider.Slides fluid axisY={!isMobile} ref={phoneRef}>
           {featuredProjects.map(
             (
               {

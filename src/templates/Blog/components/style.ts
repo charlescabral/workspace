@@ -22,7 +22,7 @@ export const Post = styled('article', {
       right: '-0.15rem',
       left: '-0.1rem',
       zIndex: '-1',
-      backgroundColor: 'hsl(223, 75%, 92%)',
+      backgroundColor: 'transparent',
       transform: 'translateY(0%) rotateZ(-3deg)',
       transition:
         'background-color var(250ms 33ms cubic-bezier(0.19, 1, 0.22, 1)), transform var(250ms 33ms cubic-bezier(0.19, 1, 0.22, 1))'
