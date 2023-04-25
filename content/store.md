@@ -7,17 +7,17 @@ social: [
   {
     name: 'Email',
     icon: 'email',
-    link: 'https://a.com',
+    link: 'mailto:charles.cabral.neto@gmail.com',
   },
   {
     name: 'Linkedin',
     icon: 'linkedin',
-    link: 'https://a.com',
+    link: 'https://www.linkedin.com/in/charlescabral/',
   },
   {
     name: 'Github',
     icon: 'github',
-    link: 'https://a.com',
+    link: 'https://github.com/charlescabral',
   }
 ]
 sponsors: [

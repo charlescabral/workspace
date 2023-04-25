@@ -87,7 +87,7 @@ export default function Card(props: MarkdownProps) {
       .to(
         bg.current,
         {
-          backgroundColor: '',
+          backgroundColor: isMobile ? color : '',
           ease: 'back.out',
           scale: 1,
           duration: timeOut

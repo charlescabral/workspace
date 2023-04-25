@@ -27,7 +27,7 @@ export default function Phone({ children, css }: PhoneProps) {
   const scene = useRef<HTMLDivElement>(null)
   const phone = useRef<HTMLDivElement>(null)
   const glass = useRef<HTMLDivElement>(null)
-  // const { isMobile } = useBreakpoint()
+  const { isMobile } = useBreakpoint()
 
   const entry = useIntersectionObserver(phone, {
     threshold: 1.0,
@@ -44,7 +44,7 @@ export default function Phone({ children, css }: PhoneProps) {
 
   const mouseMove = useCallback(
     ({ clientX, clientY }: MouseEvent) => {
-      if (clientRect) {
+      if (clientRect && !isMobile) {
         const { perspective } = options
         const { x, y } = getAxis({ clientX, clientY, clientRect })
 
@@ -63,12 +63,12 @@ export default function Phone({ children, css }: PhoneProps) {
         })
       }
     },
-    [clientRect]
+    [clientRect, isMobile]
   )
 
   const mouseLeave = useCallback(
     ({ clientX, clientY }: MouseEvent) => {
-      if (clientRect) {
+      if (clientRect && !isMobile) {
         const { x, y } = getAxis({ clientX, clientY, clientRect })
         gsap.fromTo(
           phone.current,
@@ -98,7 +98,7 @@ export default function Phone({ children, css }: PhoneProps) {
         )
       }
     },
-    [clientRect]
+    [clientRect, isMobile]
   )
 
   useEventListener('mousemove', mouseMove, scene)

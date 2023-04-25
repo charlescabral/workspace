@@ -39,6 +39,9 @@ export default function Spotlight({ projects }: PartialsProps) {
                 rounded
                 size="sm"
                 icon="r"
+                href="https://www.linkedin.com/in/charlescabral/"
+                target="blank"
+                isLink
                 css={{
                   marginRight: '$10'
                 }}
@@ -50,7 +53,15 @@ export default function Spotlight({ projects }: PartialsProps) {
                   inlineStyle={{ marginTop: '$1' }}
                 />
               </Button>
-              <Button color="primary" rounded size="sm" flat icon="lr">
+              <Button
+                color="primary"
+                rounded
+                size="sm"
+                flat
+                icon="lr"
+                href="mailto:charles.cabral.neto@gmail.com"
+                isLink
+              >
                 <Light size={32} />
                 Vamos Trocar Idéias?
                 <Left
