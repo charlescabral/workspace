@@ -39,7 +39,7 @@ export default function Spotlight({ projects }: PartialsProps) {
                 rounded
                 size="sm"
                 icon="r"
-                href="/pdf/CV_charles-cabral.pdf"
+                href="/pdf/cv-charles-cabral.pdf"
                 target="blank"
                 isLink
                 css={{
